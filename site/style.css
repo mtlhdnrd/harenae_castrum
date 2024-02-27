@@ -51,8 +51,8 @@ header {
     position: relative;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center; /* Add this line to vertically center the items */
-    height: 100%; /* Set height to 100% to occupy full height of the header */
+    align-items: center;
+    height: 100%;
     margin: 0px;
 }
 
@@ -61,13 +61,15 @@ header {
 }
 
 main{
-    height: fit-content;
-    padding: 20px;
-    padding-top: 120px;
+    height: 100vh;
     display: flex;
     justify-content: center;
     font-family: Ailerons;
     flex-wrap: wrap;
+    grid-row-gap: 20px;
+    padding: 35px;
+    padding-top: 135px;
+    align-items: center;
 }
 
 footer{
@@ -98,6 +100,7 @@ footer{
 h1{
     font-size: 10rem;
     text-shadow: 0px 0px 10px white;
+    margin: 0;
 }
 
 h2{
@@ -159,17 +162,32 @@ p{
     border-left: solid 1px black;
 }
 
-.cica{
-    flex-direction: column;
-    height: 200px;
-    background-color: aliceblue;
-    width: 500px;
+.pay_item{
+    background-color: lightblue;
+    height: 50%;
+    width: 100%;
 }
 
-#pay{
-    height: 400px;
-    background-color: aliceblue;
-    width: 30vw;
+#pay_sum{
+    height: 100%
+}
+
+#pay_img{
+    width: 100%;
+    height: 30%;
+}
+
+.column{
+    height:100%
+}
+
+#c1{
+    width: 70%;
+}
+
+#c2{
+    width: 30%;
+    padding-left: 20px
 }
 
 /* ------------------------------------------------------------ */
