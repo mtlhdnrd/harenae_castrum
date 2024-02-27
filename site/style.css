@@ -9,25 +9,57 @@ body{
 
 body::-webkit-scrollbar {
     display: none;
-  }
-
-header{
-    background-color: rgb(20, 20, 20);
-    height: fit-content;
 }
 
+header {
+    background-color: rgb(20, 20, 20);
+    height: 100px;
+    padding: 25px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    margin-right: 10px;
+    width: 80px;
+    height: 80px;
+}
+
+.navbar-brand span {
+    color: white;
+}
+
+.navbar-nav {
+    float: right;
+}
+
+.navbar-nav li {
+    padding: 10px;
+    list-style-type: none;
+}
+.navbar-nav li a{
+    line-height: 30px;
+}
+  
 .navbar {
     position: relative;
-    display: flex;
     flex-wrap: wrap;
-    align-items: center;
     justify-content: space-between;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    align-items: center; /* Add this line to vertically center the items */
+    height: 100%; /* Set height to 100% to occupy full height of the header */
+    margin: 0px;
+}
+
+#navbarNav{
+    height: 100%;
 }
 
 main{
-    height: 100vh;
+    height: fit-content;
+    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -51,16 +83,27 @@ footer{
     src: url("./fonts/Ailerons-Typeface.otf") format("opentype");
 }
 
+@font-face {
+    font-family: ImBatman;
+    src: url("./fonts/Gotham.ttf") format("opentype");
+}
+
 h1{
     font-size: 10rem;
     text-shadow: 0px 0px 10px white;
 }
 
 h2{
-    color:black;
+    color:white;
     padding:20px;
     margin:0px 10px;
+    font-family: ImBatman;
 }
+
+p{
+    font-family: geo sans light;
+}
+
 /* ------------------------------------------------------------ */
 .termek_button{
     background-color: rgba(0, 0, 0, 0.6);
