@@ -44,3 +44,12 @@
 
         return json_encode($planets);
     }
+
+    function escape_string($s) {
+        return $GLOBALS["conn"]->real_escape_string($s);
+    }
+
+    // TODO: make this work and move the garbage from order.php here
+    function record_journey() {
+        // i am way too tired
+    }
