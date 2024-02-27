@@ -1,7 +1,7 @@
 body{
     min-height: 100vh;
-    overflow: hidden;
-    background-image: url(./img/bg.png);
+    background-image: url(./img/placeholder.png);
+    overflow:visible;
     color:aliceblue;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
@@ -65,11 +65,9 @@ main{
     padding: 20px;
     padding-top: 120px;
     display: flex;
-    align-items: center;
     justify-content: center;
     font-family: Ailerons;
     flex-wrap: wrap;
-    row-gap: 20px;
 }
 
 footer{
@@ -159,6 +157,19 @@ p{
     align-items: center;
     justify-content: center;
     border-left: solid 1px black;
+}
+
+.cica{
+    flex-direction: column;
+    height: 200px;
+    background-color: aliceblue;
+    width: 500px;
+}
+
+#pay{
+    height: 400px;
+    background-color: aliceblue;
+    width: 30vw;
 }
 
 /* ------------------------------------------------------------ */
