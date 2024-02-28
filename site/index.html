@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="./script/jump_animation.js"></script>
     <title>Főoldal</title>
     <style>
         body{
@@ -21,24 +22,24 @@
 <body>
     <main>
         <div>
-            <h1>
-                Harenae Castrum
-            </h1>
+            <h1>Harenae Castrum</h1>
         </div>
         <div class="bottom_div">
-            <div class="down" style="text-align: justify">
+            <div class="bottom_item" id="bottom_desc">
                     <p>Féreglyukak elérhető áron, miközben odaérhet nem időben! Szó szerint. Menjen el reményekkel és akarva többet tudni, érkezzen felejthetetlen élményekkel a legmesszebbi részéről a világunknak! Minden faj megengedett. </p>
             </div>
-            <div class="down">
+            <div class="bottom_item">
+                <img src="./img/arrow-down.png" class="arrow-down arrow" alt="Down Arrow Icon">
+                <img src="./img/arrow-up.png" class="arrow-up arrow" alt="Up Arrow Icon" style="display: none;">
+            </div>
+            <div class="bottom_item" id="bottom_btn">
                 <a class="termek_button btn" href="./product.html">Termékek</a>
             </div>
         </div>
+        
     </main>
     <footer>
 
     </footer>
-    <img src="./img/boylgo.jpg" class="arrow-down" alt="Arrow Icon">
-
-    <script src="./script/jump_animation.js"></script>
 </body>
 </html>

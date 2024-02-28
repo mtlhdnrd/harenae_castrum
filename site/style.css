@@ -82,6 +82,7 @@ main{
     align-items:center;
     justify-content: space-between;
     transition: transform 0.5s ease;
+    padding: 50px;
 }
 
 footer {
@@ -121,6 +122,8 @@ h2{
 
 p{
     font-family: Poppins;
+    font-size: 1.2rem;
+    margin: 0;
 }
 
 form{
@@ -150,33 +153,35 @@ input:last-child{
     font-family: Ailerons;
     font-size: 3rem;
     color: aliceblue;
-    padding: 30px 70px;
+    padding: 5% 9%;
     border-color: aliceblue;
     text-shadow: 0px 0px 10px white;
     box-shadow:  0px 0px 10px white;
     border-width: 0.37rem;
 } 
 
-.arrow-down {
+#bottom_btn{
+    padding: 20px
+}
+
+.arrow {
     position: fixed;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     cursor: pointer;
     z-index: 9999; /* Ensure the arrow is above other elements */
-    transition: transform 0.3s ease; /* Add transition for smooth rotation */
+    width: 50px; /* Adjust the width as needed */
+    height: auto; /* Ensure aspect ratio is maintained */
+    transform-origin: center center; /* Set the rotation origin to the center of the image */
+    position: absolute; /* Set position to absolute to fix its position */
 }
 
-.arrow-down img {
-    width: 40px; /* Adjust the width as needed */
-    height: auto; /* Ensure aspect ratio is maintained */
-}
 
 /* ------------------------------------------------------------ */
-.down{
+.bottom_item{
     text-align: center;
     width: 40%;
-    padding: 20px;
 }
 
 .item {
@@ -199,6 +204,11 @@ input:last-child{
     width: 45%;
     padding: 20px;
     line-height: 150%;
+}
+
+#bottom_desc{
+    text-align: justify;
+    padding: 20px;
 }
 
 #add{
