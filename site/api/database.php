@@ -18,8 +18,8 @@
     }
 
     $servername = "localhost";
-    $username = "dev";
-    $password = "dev";
+    $username = "root";
+    $password = "";
     $dbname = "harenae_castrum";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
