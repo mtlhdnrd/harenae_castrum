@@ -17,6 +17,8 @@
         }
     }
 
+    require "calculate_price.php";
+
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -50,6 +52,15 @@
     }
 
     // TODO: make this work and move the garbage from order.php here
-    function record_journey() {
+    function record_journey($customerName, $dateOfJourney, $from, $to, $type, $participants) {
         // i am way too tired
+        $date_recorded = (new DateTime())->format("Y-m-d");
+        $active = 1;
+        //$price = calculate_price();
+        $query = 'INSERT INTO journeys VALUES ("'.$date_recorded.'", "1", "'.escape_string($dateOfJourney).'", "4");';
+    }
+
+    function record_return_journey($customerName, $dateOfJourney, $from, $to, $type, $participants, $dateOfReturn) {
+        record_journey($customerName, $dateOfJourney, $from, $to, $type, $participants);
+        record_journey($customerName, $dateOfReturn, $to, $from, $type, $participants);
     }
