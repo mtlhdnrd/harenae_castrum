@@ -20,11 +20,9 @@
         $type = $_POST["type"];
         $participants = $_POST["participants"];
 
-        // build query
-        // should probably move this to a function in database.php and just pass the data as parameters
-        // TODO: unfuck this abomination so it's not retarded
-        $sql = 'INSERT INTO journeys VALUES ("'.(new DateTime())->format("Y-m-d").'", "1", "'.escape_string($dateOfJourney).'", "4");';
-        echo $sql;
+        if($dateOfReturn != "") {
+            echo "dateOfReturn: $dateOfReturn";
+        }
 
         // commented to debug the query generation
         //header("Location: ".$_SERVER["HTTP_REFERER"]);

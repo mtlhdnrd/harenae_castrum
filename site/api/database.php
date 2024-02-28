@@ -18,8 +18,8 @@
     }
 
     $servername = "localhost";
-    $username = "root";
-    $password = "";
+    $username = "dev";
+    $password = "dev";
     $dbname = "harenae_castrum";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -50,6 +50,12 @@
     }
 
     // TODO: make this work and move the garbage from order.php here
-    function record_journey() {
+    function record_journey($customerName, $dateOfJourney, $from, $to, $type, $participants) {
         // i am way too tired
+        $query = 'INSERT INTO journeys VALUES ("'.(new DateTime())->format("Y-m-d").'", "1", "'.escape_string($dateOfJourney).'", "4");';
+    }
+
+    function record_return_journey($customerName, $dateOfJourney, $from, $to, $type, $participants, $dateOfReturn) {
+        record_journey($customerName, $dateOfJourney, $from, $to, $type, $participants);
+        record_journey($customerName, $dateOfReturn, $to, $from, $type, $participants);
     }
