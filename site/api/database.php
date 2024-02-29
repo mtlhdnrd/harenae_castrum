@@ -20,15 +20,14 @@
     require "calculate_price.php";
 
     $servername = "localhost";
-    $username = "root";
-    $password = "";
+    $username = "dev";
+    $password = "dev";
     $dbname = "harenae_castrum";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
 
     if($conn->connect_error) {
         die("ERROR: failed connecting to database. Reason: ".$conn->connect_error);
-    } else {
     }
 
     function get_planets() {
@@ -53,6 +52,9 @@
 
     // TODO: make this work and move the garbage from order.php here
     function record_journey($customerName, $dateOfJourney, $from, $to, $type, $participants) {
+        $planetquery = "SELECT hostility, landable FROM planet WHERE planet.ID = \"".escape_string($to)."\";";
+        $GLOBALS["conn"]->query($planetquery);
+
         // i am way too tired
         $date_recorded = (new DateTime())->format("Y-m-d");
         $active = 1;
