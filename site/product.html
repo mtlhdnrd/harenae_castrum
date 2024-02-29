@@ -8,11 +8,6 @@
     <link rel="stylesheet" href="style.css">
     <script src="./script/jump_animation.js"></script>
     <title>Termékek</title>
-    <style>
-      main{
-        height:fit-content;
-      }
-    </style>
 </head>
 <body>
    <header class="fixed-top">
@@ -36,30 +31,33 @@
       </div>
     </nav> 
   </header>
-  <main>
+  <main class="product_main">
     <div id="overlay" onclick="closeOverlay()">
       <img src="./img/boylgo.jpg">
     </div>
-    <div class="item">
+    <div class="product_item">
       <img src="./img/boylgo.jpg" onclick="openOverlay()">
-        <div class="desc" id="details">
+        <div class="product_desc" id="details">
             <h2>Planet_Name</h2>
             <p>efhafoiahndfihníaifvdijvni íabvuiadíbvuiabdvlibdavilbdagv eibdblvíakegbvilbígriwíb</p>
         </div>
-        <div class="desc" id="add">
+        <div class="product_desc" id="add">
             <a class="termek_button" href="">Foglalás</a>
         </div>
     </div>
-    <div class="item">
+    <div id="overlay" onclick="closeOverlay()">
       <img src="./img/boylgo.jpg">
-      <div class="desc" id="details">
-          <h2>Planet_Name</h2>
-          <p>efhafoiahndfihníaifvdijvni íabvuiadíbvuiabdvlibdavilbdagv eibdblvíakegbvilbígriwíb</p>
-      </div>
-      <div class="desc" id="add">
-          <a class="termek_button" href="">Foglalás</a>
-      </div>
-  </div>
+    </div>
+    <div class="product_item">
+      <img src="./img/boylgo.jpg" onclick="openOverlay()">
+        <div class="product_desc" id="details">
+            <h2>Planet_Name</h2>
+            <p>efhafoiahndfihníaifvdijvni íabvuiadíbvuiabdvlibdavilbdagv eibdblvíakegbvilbígriwíb</p>
+        </div>
+        <div class="product_desc" id="add">
+            <a class="termek_button" href="">Foglalás</a>
+        </div>
+    </div>
 </main>
 
 </body>

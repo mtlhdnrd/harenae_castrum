@@ -1,7 +1,30 @@
+/* root */
+
+/*importált betűtípusok*/
+@font-face {
+    font-family: Ailerons;
+    src: url("./fonts/Ailerons-Typeface.otf") format("opentype");
+}
+
+@font-face {
+    font-family: ImBatman;
+    src: url("./fonts/Gotham.ttf") format("opentype");
+}
+
+@font-face{
+    font-family: Poppins;
+    src: url("./fonts/Poppins-ExtraLight.ttf") format("opentype");
+}
+
+/* ------------------------------BASIC------------------------------ */
+
+/*alap jelölők*/
+
 body{
     min-height: 100vh;
-    margin: 0; /* Remove default margin */
+    margin: 0;
     background-image: url(./img/placeholder.png);
+    background: cover;
     overflow: visible;
     color: aliceblue;
     -webkit-text-size-adjust: 100%;
@@ -20,6 +43,82 @@ header {
     position: fixed;
     color: white;
 }
+
+main{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    font-family: Ailerons;
+    flex-wrap: wrap;
+    padding: 35px;
+    padding-top: 135px;
+    align-items: center;
+}
+
+footer {
+    height: 80vh;
+    width: 100%;
+    background: #999;
+    position: absolute;
+    bottom: -80vh;
+    transition: bottom 0.5s ease;
+}
+
+/*szöveg alap jelölők*/
+h1{
+    font-size: 10rem;
+    text-shadow: 0px 0px 10px white;
+    margin: 0;
+}
+
+h2{
+    margin: 0;
+    font-family: ImBatman;
+}
+
+p{
+    font-family: Poppins;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/*egyéb jelölők*/
+form{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+label{
+    width: 30%;
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+input{
+    width: 70%;
+    margin-bottom: 30px;
+    height: 30px;
+}
+
+input:last-child{
+    margin: 0;
+}
+
+/*többször felhasznált jelölők*/
+
+.termek_button{
+    background-color: rgba(0, 0, 0, 0.6);
+    font-family: Ailerons;
+    font-size: 3rem;
+    color: aliceblue;
+    padding: 5% 9%;
+    border-color: aliceblue;
+    text-shadow: 0px 0px 10px white;
+    box-shadow:  0px 0px 10px white;
+    border-width: 0.37rem;
+} 
+
+/* ------------------------------NAV------------------------------ */
 
 .navbar-brand {
     display: flex;
@@ -61,16 +160,16 @@ header {
     height: 100%;
 }
 
-main{
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    font-family: Ailerons;
-    flex-wrap: wrap;
-    row-gap: 20px;
-    padding: 35px;
-    padding-top: 135px;
-    align-items: center;
+/* ------------------------------INDEX.HTML------------------------------ */
+
+.index_body{
+    overflow: hidden;
+    background-image: url(./img/bg.png);
+}
+
+.index_main{
+    padding: 0;
+
 }
 
 .bottom_div{
@@ -85,83 +184,9 @@ main{
     padding: 50px;
 }
 
-footer {
-    height: 80vh;
-    width: 100%;
-    background: #999;
-    position: absolute;
-    bottom: -80vh;
-    transition: bottom 0.5s ease;
-}
-/* ------------------------------------------------------------ */
-@font-face {
-    font-family: Ailerons;
-    src: url("./fonts/Ailerons-Typeface.otf") format("opentype");
-}
-
-@font-face {
-    font-family: ImBatman;
-    src: url("./fonts/Gotham.ttf") format("opentype");
-}
-
-@font-face{
-    font-family: Poppins;
-    src: url("./fonts/Poppins-ExtraLight.ttf") format("opentype");
-}
-
-h1{
-    font-size: 10rem;
-    text-shadow: 0px 0px 10px white;
-    margin: 0;
-}
-
-h2{
-    margin: 0;
-    font-family: ImBatman;
-}
-
-p{
-    font-family: Poppins;
-    font-size: 1.2rem;
-    margin: 0;
-}
-
-form{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-label{
-    width: 30%;
-    font-size: 1.5em;
-    margin-bottom: 30px;
-}
-
-input{
-    width: 70%;
-    margin-bottom: 30px;
-    height: 30px;
-}
-
-input:last-child{
-    margin: 0;
-}
-
-/* ------------------------------------------------------------ */
-.termek_button{
-    background-color: rgba(0, 0, 0, 0.6);
-    font-family: Ailerons;
-    font-size: 3rem;
-    color: aliceblue;
-    padding: 5% 9%;
-    border-color: aliceblue;
-    text-shadow: 0px 0px 10px white;
-    box-shadow:  0px 0px 10px white;
-    border-width: 0.37rem;
-} 
-
-#bottom_btn{
-    padding: 20px
+.bottom_item{
+    text-align: center;
+    width: 40%;
 }
 
 .arrow {
@@ -178,26 +203,53 @@ input:last-child{
     filter: invert(1);
 }
 
-
-/* ------------------------------------------------------------ */
-.bottom_item{
-    text-align: center;
-    width: 40%;
+#bottom_desc{
+    text-align: justify;
+    padding: 20px;
 }
 
-.item {
+#bottom_btn{
+    padding: 20px
+}
+
+/* ------------------------------PRODUCTS.HTML------------------------------ */
+
+.product_main{
+    height:fit-content;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black overlay */
+    z-index: 9999; /* Ensure overlay is on top of other content */
+    text-align: center;
+}
+  
+#overlay img {
+    margin-top: 20vh; /* Adjust as needed */
+    max-width: 80%; /* Adjust as needed */
+    max-height: 60vh; /* Adjust as needed */
+}
+
+.product_item {
     height: 225px;
     width: 800px;
+    margin: 20px;
     background-color: white;
     display: flex;
     color: black;
 }
 
-.desc h2 {
+.product_desc h2 {
     margin-bottom: 10px;
 }
 
-.desc a{
+.product_desc a{
     padding: 10px 30px;
 }
 
@@ -207,11 +259,6 @@ input:last-child{
     line-height: 150%;
 }
 
-#bottom_desc{
-    text-align: justify;
-    padding: 20px;
-}
-
 #add{
     width: 30%;
     padding: 20px;
@@ -219,6 +266,21 @@ input:last-child{
     align-items: center;
     justify-content: center;
     border-left: solid 1px black;
+}
+
+/* ------------------------------CART.HTML------------------------------ */
+
+.pay_column{
+    height:100%
+}
+
+#column1{
+    width: 75%;
+}
+
+#column2{
+    width: 25%;
+    padding-left: 20px
 }
 
 .pay_item{
@@ -232,13 +294,6 @@ input:last-child{
 
 }
 
-#pay_sum{
-    height: 100%;
-    justify-content: start;
-    align-items: start;
-    padding: 0;
-}
-
 #pay_detail{
     border-bottom: 2px solid white;
 }
@@ -246,44 +301,20 @@ input:last-child{
     padding: 10px;
 }
 
+#pay_sum{
+    height: 100%;
+    justify-content: start;
+    align-items: start;
+    padding: 0;
+}
 
 #pay_img{
     width: 100%;
     aspect-ratio: 16 / 9;
 }
 
-.column{
-    height:100%
-}
+/* ------------------------------RESPONSIVE------------------------------ */
 
-#c1{
-    width: 75%;
-}
-
-#c2{
-    width: 25%;
-    padding-left: 20px
-}
-
-#overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black overlay */
-    z-index: 9999; /* Ensure overlay is on top of other content */
-    text-align: center;
-  }
-  
-  #overlay img {
-    margin-top: 20vh; /* Adjust as needed */
-    max-width: 80%; /* Adjust as needed */
-    max-height: 60vh; /* Adjust as needed */
-  }
-
-/* ------------------------------------------------------------ */
 @media only screen and (max-width: 800px) {
     body{
         overflow: scroll;
