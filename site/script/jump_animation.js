@@ -31,27 +31,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Event listener to detect scrolling
     window.addEventListener('scroll', function() {
-        const isAtTop = window.scrollY === 0;
-        const isAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight;
+        const isAtTop = arrowDown.style.display === "block";
 
-        if (isAtBottom) {
-            arrowDown.style.display = 'none';
-            arrowUp.style.display = 'block';
-        } else if (isAtTop) {
+        if(isAtTop) {
             arrowUp.style.display = 'none';
             arrowDown.style.display = 'block';
         } else {
-            arrowDown.style.display = 'block';
+            arrowDown.style.display = 'none';
             arrowUp.style.display = 'block';
         }
     });
 });
-
-function openOverlay() {
-    document.getElementById('overlay').style.display = 'block';
-  }
-  
-  function closeOverlay() {
-    document.getElementById('overlay').style.display = 'none';
-  }
-  
