@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="./script/jump_animation.js"></script>
     <title>Termékek</title>
     <style>
       main{
@@ -36,8 +37,11 @@
     </nav> 
   </header>
   <main>
+    <div id="overlay" onclick="closeOverlay()">
+      <img src="./img/boylgo.jpg">
+    </div>
     <div class="item">
-        <img src="./img/boylgo.jpg">
+      <img src="./img/boylgo.jpg" onclick="openOverlay()">
         <div class="desc" id="details">
             <h2>Planet_Name</h2>
             <p>efhafoiahndfihníaifvdijvni íabvuiadíbvuiabdvlibdavilbdagv eibdblvíakegbvilbígriwíb</p>
