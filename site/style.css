@@ -1,5 +1,9 @@
 /* root */
-
+:root{
+    --dark: #070F2B;
+    --blue: #1B1A55;
+    --light: #dbdcde;
+}
 /*importált betűtípusok*/
 @font-face {
     font-family: Ailerons;
@@ -23,12 +27,13 @@
 body{
     min-height: 100vh;
     margin: 0;
-    background-image: url(./img/placeholder.png);
-    background: cover;
+    background-image: url(./img/listings_00000.png);
+    background-size: cover;
     overflow: visible;
-    color: aliceblue;
+    color: var(--light);
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
+    font-size: calc(15px + 0.390625vw);
 }
 
 body::-webkit-scrollbar {
@@ -36,12 +41,12 @@ body::-webkit-scrollbar {
 }
 
 header {
-    background-color: rgb(20, 20, 20);
+    background-color: var(--light);
     height: 100px;
     width: 100%;
     padding: 25px;
     position: fixed;
-    color: white;
+    color: var(--dark);
 }
 
 main{
@@ -58,7 +63,7 @@ main{
 footer {
     height: 80vh;
     width: 100%;
-    background: #999;
+    background: var(--light);
     position: absolute;
     bottom: -80vh;
     transition: bottom 0.5s ease;
@@ -67,7 +72,7 @@ footer {
 /*szöveg alap jelölők*/
 h1{
     font-size: 10rem;
-    text-shadow: 0px 0px 10px white;
+    text-shadow: 0px 0px 10px var(--light);
     margin: 0;
 }
 
@@ -78,7 +83,7 @@ h2{
 
 p{
     font-family: Poppins;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin: 0;
 }
 
@@ -90,7 +95,6 @@ form{
 
 label{
     width: 30%;
-    font-size: 1.5em;
     margin-bottom: 30px;
 }
 
@@ -98,6 +102,7 @@ input{
     width: 70%;
     margin-bottom: 30px;
     height: 30px;
+    color: var(--dark);
 }
 
 input:last-child{
@@ -110,11 +115,11 @@ input:last-child{
     background-color: rgba(0, 0, 0, 0.6);
     font-family: Ailerons;
     font-size: 3rem;
-    color: aliceblue;
+    color: var(--light);
     padding: 5% 9%;
-    border-color: aliceblue;
-    text-shadow: 0px 0px 10px white;
-    box-shadow:  0px 0px 10px white;
+    border-color: var(--light);
+    text-shadow: 0px 0px 10px var(--light);
+    box-shadow:  0px 0px 10px var(--light);
     border-width: 0.37rem;
 } 
 
@@ -132,7 +137,7 @@ input:last-child{
 }
 
 .navbar-brand span {
-    color: white;
+    color: var(--light);
 }
 
 .navbar-nav {
@@ -164,7 +169,7 @@ input:last-child{
 
 .index_body{
     overflow: hidden;
-    background-image: url(./img/bg.png);
+    background-image: url(./img/harbor_00000.png);
 }
 
 .index_main{
@@ -201,6 +206,10 @@ input:last-child{
     transform-origin: center center; /* Set the rotation origin to the center of the image */
     position: absolute; /* Set position to absolute to fix its position */
     filter: invert(1);
+}
+
+#arrow_div{
+    width: 20%;
 }
 
 #bottom_desc{
@@ -240,7 +249,7 @@ input:last-child{
     height: 225px;
     width: 800px;
     margin: 20px;
-    background-color: white;
+    background-color: var(--light);
     display: flex;
     color: black;
 }
@@ -280,37 +289,54 @@ input:last-child{
 
 #column2{
     width: 25%;
-    padding-left: 20px
+    padding-left: 20px;
 }
 
-.pay_item{
-    background-color: lightblue;
+.pay_item {
     height: 50%;
     width: 100%;
     padding: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    margin: 0 auto;
+    flex-direction: column; /* Added to stack items vertically */
 }
 
-#pay_detail{
-    border-bottom: 2px solid white;
-}
-#pay_form{
-    padding: 10px;
+.pay_item form label {
+    margin-bottom: 2%; /* Adjust margin between labels and inputs */
 }
 
-#pay_sum{
+.pay_item form input[type="text"],
+.pay_item form input[type="date"] {
+    margin-bottom: 2%; /* Adjust margin between inputs */
+}
+
+.pay_item p{
+    margin:auto;
+}
+
+#pay_form {
+    padding: 5%;
+    border-top: 2px solid var(--light);
+}
+
+#pay_sum {
     height: 100%;
     justify-content: start;
     align-items: start;
     padding: 0;
+    border: 2px solid var(--light);
 }
 
-#pay_img{
+#pay_img {
     width: 100%;
     aspect-ratio: 16 / 9;
+}
+
+.cart_btn { /* Make the button float to the bottom */
+    margin:auto;
+    margin-bottom: 15%;
 }
 
 /* ------------------------------RESPONSIVE------------------------------ */
