@@ -20,8 +20,8 @@
     require "calculate_price.php";
 
     $servername = "localhost";
-    $username = "dev";
-    $password = "dev";
+    $username = "root";
+    $password = "";
     $dbname = "harenae_castrum";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -59,7 +59,7 @@
         $date_recorded = (new DateTime())->format("Y-m-d");
         $active = 1;
         //$price = calculate_price();
-        $query = 'INSERT INTO journeys VALUES ("'.$date_recorded.'", "1", "'.escape_string($dateOfJourney).'", "4");';
+        $query = 'INSERT INTO journey VALUES ("'.$date_recorded.'", "1", "'.escape_string($dateOfJourney).'", "4");';
     }
 
     function record_return_journey($customerName, $dateOfJourney, $from, $to, $type, $participants, $dateOfReturn) {

@@ -6,8 +6,9 @@
 - description (string)
 - hostility (1-5 int) (default 1)
 - landable (bool) (default false)
+- price (int)
 
-## journeys
+## journey
 - ID (PK)
 - date_recorded (date)
 - active (bool) (have to do shit with it)
