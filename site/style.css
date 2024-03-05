@@ -67,6 +67,7 @@ footer {
     position: absolute;
     bottom: -80vh;
     transition: bottom 0.5s ease;
+    margin: 0;
 }
 
 /*szöveg alap jelölők*/
@@ -74,6 +75,7 @@ h1{
     font-size: 10rem;
     text-shadow: 0px 0px 10px var(--light);
     margin: 0;
+    text-align: center;
 }
 
 h2{
@@ -123,6 +125,16 @@ input:last-child{
     border-width: 0.37rem;
 } 
 
+.termek_button:hover{
+    color: white;
+    background-color: var(--dark);
+    transition-duration: 0.4s;
+}
+
+.termek_button:focus{
+    color: white;
+}
+
 /* ------------------------------NAV------------------------------ */
 
 .navbar-brand {
@@ -165,6 +177,11 @@ input:last-child{
     height: 100%;
 }
 
+.nav-link, .nav-link:hover{
+    color: var(--dark);
+    
+}
+
 /* ------------------------------INDEX.HTML------------------------------ */
 
 .index_body{
@@ -192,6 +209,12 @@ input:last-child{
 .bottom_item{
     text-align: center;
     width: 40%;
+    word-wrap: break-word;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
 }
 
 .arrow {
@@ -222,7 +245,7 @@ input:last-child{
 }
 
 .portrait{
-    height: 50vh;
+    height: 60vh;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
@@ -231,24 +254,24 @@ input:last-child{
 
 .portrait_div{
     width: 15vw;
-    height: 100%;
+    height: 20vw;
     background-color: black;
 }
 
 .portrait_img{
-    height: calc(100%-30px);
+    height: 100%;
     width: 100%;
     aspect-ratio: 3 / 4;
-}
-
-figcaption{
-    font-family: Poppins;
-    text-align: center;
 }
 
 .socials{
     height: 20vh;
     width: 100%;
+    margin-bottom: 0;
+    position: absolute;
+    bottom: 0;
+    color: var(--dark);
+    text-indent: 10px;
 }
 
 /* ------------------------------PRODUCTS.HTML------------------------------ */
@@ -257,7 +280,7 @@ figcaption{
     height:fit-content;
 }
 
-#overlay {
+.overlay {
     display: none;
     position: fixed;
     top: 0;
@@ -385,4 +408,17 @@ figcaption{
     .item{
         width:100vh;
     }
+    h1 {
+        font-size: 6rem; /* Adjust as needed */
+    }
+
+    h2 {
+        font-size: 2.5rem; /* Adjust as needed */
+    }
+
+    p {
+        font-size: 1.6rem; /* Adjust as needed */
+    }
+
+
 }

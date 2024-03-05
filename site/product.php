@@ -22,17 +22,17 @@
             <a class="nav-link" href="./index.html"><p>Főoldal</p></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="./product.html"><p>Ajánlatok</p><span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="./product.php"><p>Ajánlatok</p><span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="./cart.html"><p>Kosár</p></a>
+            <a class="nav-link" href="./cart.php"><p>Kosár</p></a>
           </li>
         </ul>
       </div>
     </nav> 
   </header>
   <main class="product_main">
-    <div id="overlay" onclick="closeOverlay()">
+    <div class="overlay" onclick="closeOverlay()">
       <img src="./img/boylgo.jpg">
     </div>
     <div class="product_item">
@@ -45,7 +45,7 @@
             <a class="termek_button" href="">Foglalás</a>
         </div>
     </div>
-    <div id="overlay" onclick="closeOverlay()">
+    <div class="overlay" onclick="closeOverlay()">
       <img src="./img/boylgo.jpg">
     </div>
     <div class="product_item">
