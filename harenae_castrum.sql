@@ -108,8 +108,8 @@ LOCK TABLES `planet` WRITE;
 /*!40000 ALTER TABLE `planet` DISABLE KEYS */;
 INSERT INTO `planet` VALUES
 (5,'Venus','venus_min_00000.png','Csomagolja kameráját, és látogassa meg a Vénuszi Vadvilágot! Ismert, kedvelt látványosság, ahol a fotós lehetőségei a végtelen felé közelednek!',2,'',5000,'venus_infopanel_00000.png'),
-(6,'Crystallis','crystallis_min_00000.png','Egy bolyó-méretű szellemváros, amely arra készteti az egyént, hogy újragondolja a háború fogalmát, miközben az áldozatok rideg, drágakövekbe fagyott tekintetükkel vizslatják a betolakodót.',2,'',2000,'crystallis_infopanel_00000.png'),
-(7,'Edax Carnium','edax_min_00000.png','Mi történik, ha az egyén feldühíti a bolygót, amin áll? A bolygó bosszút áll, az egyén eltűnik.',5,'',15000,'edax_infopanel_00000.png'),
+(6,'Crystallis','crystallis_min_00000.png','Egy bolygó-méretű szellemváros, amely arra készteti az egyént, hogy újragondolja a háború fogalmát, miközben az áldozatok rideg, drágakövekbe fagyott tekintetükkel vizslatják a betolakodót.',2,'',2000,'crystallis_infopanel_00000.png'),
+(7,'Edax Carnium','edax_min_00000.png','Mi történik, ha az egyén feldühíti a bolygót, amin áll? A bolygó bosszút áll, az egyén eltűnik.',5,'\0',15000,'edax_infopanel_00000.png'),
 (8,'Jupiter','jupiter_min_00000.png','Fedezze fel a legújabb bányászati technológiát a tett helyszínén! Közvetlen belátást nyerhet a termelés legmodernebb, leghatékonyabb módjára, amelyet az ott dolgozók részletesen bemutatnak.',0,'',1000,'jupiter_infopanel_00000.png'),
 (9,'Mars','mars_min_00000.png','Ismerjen meg egy kultúrát, mely ugyan a Földéhez hasonló alapokkal rendelkezik, a kultúrfa minden ágán különbözik ősétől.',2,'',4000,'mars_infopanel_00000.png'),
 (10,'Mercury','mercury_min_00000.png','A brutális életkörülmények, ellenséges környezet és kemény munka megtestesülése. A Merkúr embere az életet egy magasabb nehézségi fokon játssza, mégis egy könnyed, boldog társadalmat tudnak felmutatni, ahova bekerülve az ember nem is sejtené, mennyit szenvednek.',4,'',7500,'mercury_infopanel_00000.png'),
@@ -127,4 +127,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-03-05  9:55:17
+-- Dump completed on 2024-03-05 12:35:40
