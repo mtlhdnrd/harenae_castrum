@@ -1,5 +1,5 @@
 /* root */
-:root{
+:root {
     --dark: #070F2B;
     --blue: #1B1A55;
     --light: #dbdcde;
@@ -15,7 +15,7 @@
     src: url("./fonts/Gotham.ttf") format("opentype");
 }
 
-@font-face{
+@font-face {
     font-family: Poppins;
     src: url("./fonts/Poppins-ExtraLight.ttf") format("opentype");
 }
@@ -24,7 +24,7 @@
 
 /*alap jelölők*/
 
-body{
+body {
     min-height: 100vh;
     margin: 0;
     background-image: url(./img/listings_00000.png);
@@ -49,7 +49,7 @@ header {
     color: var(--dark);
 }
 
-main{
+main {
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -70,48 +70,48 @@ footer {
 }
 
 /*szöveg alap jelölők*/
-h1{
+h1 {
     font-size: 10rem;
     text-shadow: 0px 0px 10px var(--light);
     margin: 0;
 }
 
-h2{
+h2 {
     margin: 0;
     font-family: ImBatman;
 }
 
-p{
+p {
     font-family: Poppins;
     font-size: 1.3rem;
     margin: 0;
 }
 
 /*egyéb jelölők*/
-form{
+form {
     display: flex;
     flex-wrap: wrap;
 }
 
-label{
+label {
     width: 30%;
     margin-bottom: 30px;
 }
 
-input{
+input {
     width: 70%;
     margin-bottom: 30px;
     height: 30px;
     color: var(--dark);
 }
 
-input:last-child{
+input:last-child {
     margin: 0;
 }
 
 /*többször felhasznált jelölők*/
 
-.termek_button{
+.termek_button {
     background-color: rgba(0, 0, 0, 0.6);
     font-family: Ailerons;
     font-size: 3rem;
@@ -148,7 +148,7 @@ input:last-child{
     padding: 10px;
     list-style-type: none;
 }
-.navbar-nav li a{
+.navbar-nav li a {
     line-height: 30px;
 }
 
@@ -161,23 +161,23 @@ input:last-child{
     margin: 0px;
 }
 
-#navbarNav{
+#navbarNav {
     height: 100%;
 }
 
 /* ------------------------------INDEX.HTML------------------------------ */
 
-.index_body{
+.index_body {
     overflow: hidden;
     background-image: url(./img/harbor_00000.png);
 }
 
-.index_main{
+.index_main {
     padding: 0;
 
 }
 
-.bottom_div{
+.bottom_div {
     position: absolute;
     bottom: 0;
     height: 20vh;
@@ -189,7 +189,7 @@ input:last-child{
     padding: 50px;
 }
 
-.bottom_item{
+.bottom_item {
     text-align: center;
     width: 40%;
 }
@@ -208,20 +208,20 @@ input:last-child{
     filter: invert(1);
 }
 
-#arrow_div{
+#arrow_div {
     width: 20%;
 }
 
-#bottom_desc{
+#bottom_desc {
     text-align: justify;
     padding: 20px;
 }
 
-#bottom_btn{
+#bottom_btn {
     padding: 20px
 }
 
-.portrait{
+.portrait {
     height: 50vh;
     width: 100%;
     display: flex;
@@ -229,31 +229,31 @@ input:last-child{
     align-items: center;
 }
 
-.portrait_div{
+.portrait_div {
     width: 15vw;
     height: 100%;
     background-color: black;
 }
 
-.portrait_img{
+.portrait_img {
     height: calc(100%-30px);
     width: 100%;
     aspect-ratio: 3 / 4;
 }
 
-figcaption{
+figcaption {
     font-family: Poppins;
     text-align: center;
 }
 
-.socials{
+.socials {
     height: 20vh;
     width: 100%;
 }
 
 /* ------------------------------PRODUCTS.HTML------------------------------ */
 
-.product_main{
+.product_main {
     height:fit-content;
 }
 
@@ -288,17 +288,17 @@ figcaption{
     margin-bottom: 10px;
 }
 
-.product_desc a{
+.product_desc a {
     padding: 10px 30px;
 }
 
-#details{
+.details {
     width: 45%;
     padding: 20px;
     line-height: 150%;
 }
 
-.add{
+.add {
     width: 30%;
     padding: 20px;
     display: flex;
@@ -309,15 +309,15 @@ figcaption{
 
 /* ------------------------------CART.HTML------------------------------ */
 
-.pay_column{
+.pay_column {
     height:100%
 }
 
-#column1{
+#column1 {
     width: 75%;
 }
 
-#column2{
+#column2 {
     width: 25%;
     padding-left: 20px;
 }
@@ -342,7 +342,7 @@ figcaption{
     margin-bottom: 2%; /* Adjust margin between inputs */
 }
 
-.pay_item p{
+.pay_item p {
     margin:auto;
 }
 
@@ -371,18 +371,18 @@ figcaption{
 
 /* ------------------------------FINALIZE.HTML------------------------------ */
 
-.finalize_btn{
+.finalize_btn {
     padding: 3% 4%;
 }
 
 /* ------------------------------RESPONSIVE------------------------------ */
 
 @media only screen and (max-width: 800px) {
-    body{
+    body {
         overflow: scroll;
         text-align: center;
     }
-    .item{
+    .item {
         width:100vh;
     }
 }
