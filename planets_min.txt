@@ -1,0 +1,9 @@
+crystallis: Egy bolyó-méretű szellemváros, amely arra készteti az egyént, hogy újragondolja a háború fogalmát, miközben az áldozatok rideg, drágakövekbe fagyott tekintetükkel vizslatják a betolakodót.
+venus: Csomagolja kameráját, és látogassa meg a Vénuszi Vadvilágot! Ismert, kedvelt látványosság, ahol a fotós lehetőségei a végtelen felé közelednek!
+viverium: Az arachnophobia megtestesülése. Itt szembesülhet egy olyan világgal, amelyben csak rovarok, bogarak élnek, otthont adva több méteres, de akár egy-két milliméteres pókoknak is.
+jupiter: Fedezze fel a legújabb bányászati technológiát a tett helyszínén! Közvetlen belátást nyerhet a termelés legmodernebb, leghatékonyabb módjára, amelyet az ott dolgozók részletesen bemutatnak.
+mars: Ismerjen meg egy kultúrát, mely ugyan a Földéhez hasonló alapokkal rendelkezik, a kultúrfa minden ágán különbözik ősétől.
+saturn: Játsszon univerzum legismertebb szórakozóhelyei, fogadjon a legendás Saturn Eight körversenyre, vegyen részt a fényűzés létrájának legmagasabb fokain!
+edax carnium: Mi történik, ha az egyén feldühíti a bolygót, amin áll? A bolygó bosszút áll, az egyén eltűnik.
+mercury: A brutális életkörülmények, ellenséges környezet és kemény munka megtestesülése. A Merkúr embere az életet egy magasabb nehézségi fokon játssza, mégis egy könnyed, boldog társadalmat tudnak felmutatni, ahova bekerülve az ember nem is sejtené, mennyit szenvednek.
+earth: A terraformáló titánok ősatyja, a bolygó, ahonnan naprendszert meghódító Homo sapiens származik. Többmillió éves hagyományok, és egy sokat megélt, tapasztalt társadalom.

@@ -6,18 +6,20 @@
         public $description;
         public $hostility;
         public $landable;
+        public $price;
+        public $infopanel;
 
-        function __construct($ID, $name, $image, $description, $hostility, $landable) {
+        function __construct($ID, $name, $image, $description, $hostility, $landable, $price, $infopanel) {
             $this->ID = $ID;
             $this->name = $name;
             $this->image = $image;
             $this->description = $description;
             $this->hostility = $hostility;
             $this->landable = $landable;
+            $this->price = $price;
+            $this->infopanel = $infopanel;
         }
     }
-
-    require "calculate_price.php";
 
     $servername = "localhost";
     $username = "root";
@@ -32,13 +34,13 @@
 
     function get_planets() {
         $planets = array();
-        $query = "SELECT `ID`, `name`, `image`, `description`, `hostility`, `landable` FROM planet;";
+        $query = "SELECT `ID`, `name`, `image`, `description`, `hostility`, `landable`, `price`, `infopanel` FROM planet;";
         $result = $GLOBALS["conn"]->query($query);
         if($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
                 array_push(
                     $planets,
-                    new Planet($row["ID"], $row["name"], $row["image"], $row["description"], $row["hostility"], $row["landable"])
+                    new Planet($row["ID"], $row["name"], $row["image"], $row["description"], $row["hostility"], $row["landable"], $row["price"], $row["infopanel"])
                 );
             }
         }
