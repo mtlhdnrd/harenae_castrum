@@ -34,7 +34,7 @@
 
     function get_planets() {
         $planets = array();
-        $query = "SELECT `ID`, `name`, `image`, `description`, `hostility`, `landable`, `price`, `infopanel` FROM planet;";
+        $query = "SELECT `ID`, `name`, `image`, `description`, `hostility`, `landable`, `price`, `infopanel` FROM planet ORDER BY planet.name;";
         $result = $GLOBALS["conn"]->query($query);
         if($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
@@ -46,6 +46,12 @@
         }
 
         return json_encode($planets);
+    }
+
+    function get_planet_by_id($id) {
+        $query = "SELECT `ID`, `name`, `image`, `description`, `hostility`, `landable`, `price`, `infopanel` FROM planet WHERE ID = "
+            .escape_string($id).";";
+        // query planet, return json
     }
 
     function escape_string($s) {
