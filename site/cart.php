@@ -9,27 +9,32 @@
     <title>Kosár</title>
 </head>
 <body>
-    <header class="fixed-top">
-        <nav class="navbar navbar-expand">
-          <div class="navbar-brand">
+<header class="fixed-top">
+    <nav class="navbar navbar-expand-lg">
+        <div class="navbar-brand">
             <img src="./img/boylgo.jpg">
             <h2>Harenae Castrum</h2>
-          </div>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="./index.html"><p>Főoldal</p></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./product.php"><p>Ajánlatok</p><span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item  active">
-                <a class="nav-link" href="./cart.php"><p>Kosár</p></a>
-              </li>
+        </div>
+        <button class="navbar-toggler" type="button" onclick="toggleMenu()" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html"><p>Főoldal</p></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="./product.php"><p>Ajánlatok</p><span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./cart.php"><p>Kosár</p></a>
+                </li>
             </ul>
-          </div>
-        </nav> 
-    </header>
+        </div>
+    </nav>
+</header>
+
+
     <main>
         <div class="pay_column" id="column1">
           <div class="pay_item" id="pay_detail">

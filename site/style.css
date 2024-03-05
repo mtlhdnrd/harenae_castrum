@@ -33,9 +33,15 @@ body {
     color: var(--light);
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
-    font-size: calc(15px + 0.390625vw);
+    font-size: calc(0.9vw + 0.9vh);
+    overflow-y: scroll;
 }
 
+html {
+    scrollbar-width: none;
+  }
+  
+  /* Hide scrollbar for Webkit based browsers */
 body::-webkit-scrollbar {
     display: none;
 }
@@ -72,7 +78,7 @@ footer {
 
 /*szöveg alap jelölők*/
 h1 {
-    font-size: 10rem;
+    font-size: 7em;
     text-shadow: 0px 0px 10px var(--light);
     margin: 0;
     text-align: center;
@@ -80,12 +86,12 @@ h1 {
 
 h2 {
     margin: 0;
+    font-size: 3em;
     font-family: ImBatman;
 }
 
 p {
     font-family: Poppins;
-    font-size: 1.3rem;
     margin: 0;
 }
 
@@ -116,7 +122,7 @@ input:last-child {
 .termek_button {
     background-color: rgba(0, 0, 0, 0.6);
     font-family: Ailerons;
-    font-size: 3rem;
+    font-size: 2em;
     color: var(--light);
     padding: 5% 9%;
     border-color: var(--light);
@@ -180,6 +186,10 @@ input:last-child {
 .nav-link, .nav-link:hover{
     color: var(--dark);
     
+}
+
+.navbar-toggler{
+    display: none;
 }
 
 /* ------------------------------INDEX.HTML------------------------------ */
@@ -299,16 +309,18 @@ input:last-child {
 }
 
 .product_item {
-    height: 225px;
+    height: 250px;
     width: 800px;
     margin: 20px;
     background-color: var(--light);
     display: flex;
     color: black;
+    word-break: break-word;
 }
 
 .product_desc h2 {
     margin-bottom: 10px;
+    font-size: 2em;
 }
 
 .product_desc a {
@@ -319,15 +331,21 @@ input:last-child {
     width: 45%;
     padding: 20px;
     line-height: 150%;
+    font-size:1em;
+    
 }
 
 .add {
     width: 30%;
-    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-left: solid 1px black;
+}
+
+.add .termek_button{
+    padding: 5% 9%;
+    font-size: 1.5em;
 }
 
 /* ------------------------------CART.HTML------------------------------ */
@@ -401,24 +419,125 @@ input:last-child {
 /* ------------------------------RESPONSIVE------------------------------ */
 
 @media only screen and (max-width: 800px) {
-    body {
-        overflow: scroll;
-        text-align: center;
-    }
-    .item {
-        width:100vh;
-    }
-    h1 {
-        font-size: 6rem; /* Adjust as needed */
+    
+        body {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none; 
+        }
+        
+        .index_body{
+            overflow: visible;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none; 
+        }
+
+        .item {
+            width:100vh;
+        }
+    
+        h1 {
+            font-size: 8rem; /* Adjust as needed */
+            margin: 20px;
+            margin-top: 70px;
+            margin-bottom: 30px;
+        }
+    
+        h2 {
+            font-size: 2.5rem; /* Adjust as needed */
+        }
+    
+        p {
+            font-size: 1.6rem; /* Adjust as needed */
+        }
+    
+        main {
+            height: fit-content;
+        }
+    
+        .bottom_div {
+            position: static; /* Change position to static so it flows within the document */
+            height: auto; /* Remove fixed height */
+            flex-direction: column; /* Stack items vertically */
+            align-items: center; /* Center items vertically */
+            padding: 20px; /* Adjust padding */
+        }
+    
+        .bottom_item {
+            width: 100%;
+        }
+    
+        #arrow_div {
+            display: none;
+        }
+    
+        footer {
+            height: fit-content;
+            margin-top: 20px; /* Add margin to create space between main content and footer */
+            position: flex; /* Change position to static */
+            bottom: auto; /* Reset bottom property */
+        }
+
+        .portrait{
+            align-items: center;
+            flex-direction: column;
+            height: auto;
+        }
+
+        .portrait_div{
+            margin: 20px;
+        }
+
+        .portrait_img{
+            width: auto;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .navbar-nav {
+        display: none;
     }
 
-    h2 {
-        font-size: 2.5rem; /* Adjust as needed */
+    .navbar-toggler{
+        display: flex;
     }
 
-    p {
-        font-size: 1.6rem; /* Adjust as needed */
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #fff;
+        padding: 15px;
+        border: 1px solid #ddd;
+        display: none;
     }
 
+    .navbar-collapse ul {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
+    .show {
+        display: block !important;
+    }
 }

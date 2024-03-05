@@ -44,3 +44,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+function toggleMenu() {
+    var menu = document.getElementById("navbarNav");
+    menu.classList.toggle("show");
+}
