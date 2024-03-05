@@ -17,8 +17,6 @@
             <input type="date" name="dateOfReturn"><br>
             <label for="from">From where</label>
             <input type="text" name="from" required><br>
-            <label for="type">Type</label>
-            <input type="text" name="type" required><br>
             <label for="participants">Participants</label>
             <input type="number" name="participants" required><br>
             <input type="hidden" value="1" name="planetID">

@@ -29,7 +29,7 @@
               </li>
             </ul>
           </div>
-        </nav> 
+        </nav>
       </header>
     <main>
         <div>

@@ -41,13 +41,13 @@
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur dolores vero similique repellendus adipisci, cum, illo non quibusdam laborum temporibus facere nesciunt qui officiis, quas fugiat eveniet provident ipsam est! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos eos, ex reprehenderit, cumque earum iusto nam numquam consequatur deserunt placeat atque dolorum minus architecto, veniam ullam non quos delectus harum.</p>
           </div>
           <div class="pay_item" id="pay_form">
-            <form id="user_input">
+            <form action="./finalize.php" method="post" id="user_input">
               <label for="name">Név: </label>
         <input type="text" id="name" name="name" required>
         <label for="date">Utazás dátuma:</label>
         <input type="date" id="date" name="date" required>
-        <label for="date">Visszaút dátuma (opcionális):</label>
-        <input type="date" id="date" name="date">
+        <label for="return_date">Visszaút dátuma (opcionális):</label>
+        <input type="date" id="return_date" name="return_date">
         <label for="from">Honnan?:</label>
         <input type="text" id="from" name="from" required>
         <label for="people">Fő (db):</label>
@@ -64,7 +64,7 @@
                 echo "<img src='./img/boylgo.jpg' id='pay_img'>";
                 echo "<p>(ide majd kell az ár)".$planetID."</p>";
             ?>
-            <a class="termek_button cart_btn" href="./finalize.php">Fizetés</a>
+            <a class="termek_button cart_btn" href="#" onclick='document.getElementById("user_input").submit()'>Fizetés</a>
           </div>
         </div>
     </main>
