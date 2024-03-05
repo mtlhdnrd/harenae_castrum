@@ -12,7 +12,6 @@
 ## journey
 - ID (PK)
 - date_recorded (date)
-- active (bool) (have to do shit with it)
 - date_of_journey (date)
 - price (int)
 - number_of_passangers (int)

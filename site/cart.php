@@ -55,8 +55,11 @@
         </div>
         <div class="pay_column" id="column2">
           <div class="pay_item" id="pay_sum">
-            <img src="./img/boylgo.jpg" id="pay_img">
-            <p>(ide majd kell az ár)</p>
+            <?php
+                $planetID = $_POST["planetID"];
+                echo "<img src='./img/boylgo.jpg' id='pay_img'>";
+                echo "<p>(ide majd kell az ár)".$planetID."</p>";
+            ?>
             <a class="termek_button cart_btn" href="">Fizetés</a>
           </div>
         </div>
