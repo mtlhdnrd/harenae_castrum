@@ -121,7 +121,7 @@ input:last-child{
     text-shadow: 0px 0px 10px var(--light);
     box-shadow:  0px 0px 10px var(--light);
     border-width: 0.37rem;
-} 
+}
 
 /* ------------------------------NAV------------------------------ */
 
@@ -151,7 +151,7 @@ input:last-child{
 .navbar-nav li a{
     line-height: 30px;
 }
-  
+
 .navbar {
     position: relative;
     flex-wrap: wrap;
@@ -257,7 +257,7 @@ figcaption{
     height:fit-content;
 }
 
-#overlay {
+.overlay {
     display: none;
     position: fixed;
     top: 0;
@@ -268,8 +268,8 @@ figcaption{
     z-index: 9999; /* Ensure overlay is on top of other content */
     text-align: center;
 }
-  
-#overlay img {
+
+.overlay img {
     margin-top: 20vh; /* Adjust as needed */
     max-width: 80%; /* Adjust as needed */
     max-height: 60vh; /* Adjust as needed */
@@ -298,7 +298,7 @@ figcaption{
     line-height: 150%;
 }
 
-#add{
+.add{
     width: 30%;
     padding: 20px;
     display: flex;
