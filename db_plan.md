@@ -7,6 +7,7 @@
 - hostility (1-5 int) (default 1)
 - landable (bool) (default false)
 - price (int)
+- infopanel (filepath)
 
 ## journey
 - ID (PK)
