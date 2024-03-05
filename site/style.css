@@ -383,6 +383,10 @@ input:last-child {
     margin-bottom: 2%; /* Adjust margin between labels and inputs */
 }
 
+.pay_item form {
+    font-family: Poppins;
+}
+
 .pay_item form input[type="text"],
 .pay_item form input[type="date"] {
     margin-bottom: 2%; /* Adjust margin between inputs */
@@ -395,6 +399,7 @@ input:last-child {
 #pay_form {
     padding: 5%;
     border-top: 2px solid var(--light);
+
 }
 
 #pay_sum {
