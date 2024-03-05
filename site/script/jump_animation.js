@@ -12,20 +12,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to scroll or jump to a specified position
     function jumpTo(destination) {
-        if (destination === 'bottom') {
-            window.scrollTo({
-                top: document.body.scrollHeight,
-                behavior: 'smooth'
-            });
-            arrowDown.style.display = 'none';
-            arrowUp.style.display = 'block';
-        } else if (destination === 'top') {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-            arrowUp.style.display = 'none';
-            arrowDown.style.display = 'block';
+        if(window.innerWidth > 800) {
+            if (destination === 'bottom') {
+                window.scrollTo({
+                    top: document.body.scrollHeight,
+                    behavior: 'smooth'
+                });
+                arrowDown.style.display = 'none';
+                arrowUp.style.display = 'block';
+            } else if (destination === 'top') {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                arrowUp.style.display = 'none';
+                arrowDown.style.display = 'block';
+            }
         }
     }
 
