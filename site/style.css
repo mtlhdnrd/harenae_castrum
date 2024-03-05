@@ -74,14 +74,17 @@ footer {
     bottom: -80vh;
     transition: bottom 0.5s ease;
     margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 /*szöveg alap jelölők*/
 h1 {
-    font-size: 7em;
+   
     text-shadow: 0px 0px 10px var(--light);
     margin: 0;
     text-align: center;
+    font-size: clamp(60px, 10vw, 800px);
 }
 
 h2 {
@@ -93,6 +96,7 @@ h2 {
 p {
     font-family: Poppins;
     margin: 0;
+    font-size: 16px;
 }
 
 /*egyéb jelölők*/
@@ -225,6 +229,7 @@ input:last-child {
     justify-content: center;
     flex-direction: row;
     align-items: center;
+    background-color: 1;
 }
 
 .arrow {
@@ -234,7 +239,7 @@ input:last-child {
     transform: translateX(-50%);
     cursor: pointer;
     z-index: 9999; /* Ensure the arrow is above other elements */
-    width: 50px; /* Adjust the width as needed */
+    width: 60px; /* Adjust the width as needed */
     height: auto; /* Ensure aspect ratio is maintained */
     transform-origin: center center; /* Set the rotation origin to the center of the image */
     position: absolute; /* Set position to absolute to fix its position */
@@ -255,7 +260,7 @@ input:last-child {
 }
 
 .portrait {
-    height: 60vh;
+    height: 100%;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
@@ -263,8 +268,8 @@ input:last-child {
 }
 
 .portrait_div {
-    width: 15vw;
-    height: 20vw;
+    width: auto;
+    height: 50%;
     background-color: black;
 }
 
@@ -274,14 +279,16 @@ input:last-child {
     aspect-ratio: 3 / 4;
 }
 
-.socials {
-    height: 20vh;
-    width: 100%;
-    margin-bottom: 0;
+#devs {
+    height: 25%;
     position: absolute;
-    bottom: 0;
     color: var(--dark);
-    text-indent: 10px;
+    text-indent: 25px;
+    justify-content: flex-start;
+}
+
+#devs h2{
+    font-family: Poppins;
 }
 
 /* ------------------------------PRODUCTS.HTML------------------------------ */
@@ -309,18 +316,17 @@ input:last-child {
 }
 
 .product_item {
-    height: 250px;
+    height: 225px;
     width: 800px;
     margin: 20px;
     background-color: var(--light);
     display: flex;
     color: black;
-    word-break: break-word;
 }
 
 .product_desc h2 {
     margin-bottom: 10px;
-    font-size: 2em;
+    font-size: 1.4em;
 }
 
 .product_desc a {
@@ -330,9 +336,8 @@ input:last-child {
 .details {
     width: 45%;
     padding: 20px;
-    line-height: 150%;
     font-size:1em;
-    
+    word-break: break-word;
 }
 
 .add {
@@ -344,8 +349,8 @@ input:last-child {
 }
 
 .add .termek_button{
-    padding: 5% 9%;
-    font-size: 1.5em;
+    padding: 20px 30px;
+    font-size: 25px
 }
 
 /* ------------------------------CART.HTML------------------------------ */
@@ -418,6 +423,8 @@ input:last-child {
 
 /* ------------------------------RESPONSIVE------------------------------ */
 
+
+
 @media only screen and (max-width: 800px) {
     
         body {
@@ -428,18 +435,41 @@ input:last-child {
             scrollbar-width: none; 
         }
         
+/* ------------------------------INDEX.HTML------------------------------ */
+
         .index_body{
             overflow: visible;
             -ms-overflow-style: none;  /* IE and Edge */
             scrollbar-width: none; 
         }
-
+/* ------------------------------PRODUCTS.HTML------------------------------ */
         .item {
             width:100vh;
         }
-    
+
+        .product_item{
+            flex-direction: column;
+            height:fit-content;
+            width: 70%;
+            margin: 15%;
+            padding: 15px;
+            justify-content: center;
+        }
+
+        .product_desc{
+            width: 100%;
+        }
+        
+        .product_desc h2{
+            font-size: 2em;
+        }
+
+        .add{
+            border: none;
+        }
+
         h1 {
-            font-size: 8rem; /* Adjust as needed */
+            font-size: clamp(40px, 10vw, 800px); /* Adjust as needed */
             margin: 20px;
             margin-top: 70px;
             margin-bottom: 30px;
@@ -481,24 +511,31 @@ input:last-child {
         }
 
         .portrait{
-            align-items: center;
             flex-direction: column;
-            height: auto;
+            height: 100% ;
+            display: flex;
+            justify-content: space-evenly;
         }
 
         .portrait_div{
-            margin: 20px;
+            margin-top: 30px;
+            height: 300px;
+            width: 225px;
         }
 
-        .portrait_img{
-            width: auto;
+        .portrait_div:last-child{
+            margin-bottom: 30px;
         }
 
         body::-webkit-scrollbar {
             display: none;
         }
 
-
+        #devs{
+            text-indent: 0;
+            position:relative;
+            margin: 20px 0px;
+        }
 
 
 

@@ -12,7 +12,7 @@
 <header class="fixed-top">
     <nav class="navbar navbar-expand-lg">
         <div class="navbar-brand">
-            <img src="./img/boylgo.jpg">
+            <img src="./img/logo_00000.png">
             <h2>Harenae Castrum</h2>
         </div>
         <button class="navbar-toggler" type="button" onclick="toggleMenu()" aria-label="Toggle navigation">
@@ -41,7 +41,7 @@
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur dolores vero similique repellendus adipisci, cum, illo non quibusdam laborum temporibus facere nesciunt qui officiis, quas fugiat eveniet provident ipsam est! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos eos, ex reprehenderit, cumque earum iusto nam numquam consequatur deserunt placeat atque dolorum minus architecto, veniam ullam non quos delectus harum.</p>
           </div>
           <div class="pay_item" id="pay_form">
-            <form>
+            <form id="user_input">
               <label for="name">Név: </label>
         <input type="text" id="name" name="name">
         <br>
@@ -56,11 +56,12 @@
         <div class="pay_column" id="column2">
           <div class="pay_item" id="pay_sum">
             <?php
+            ini_set('display_errors','Off');
                 $planetID = $_POST["planetID"];
                 echo "<img src='./img/boylgo.jpg' id='pay_img'>";
                 echo "<p>(ide majd kell az ár)".$planetID."</p>";
             ?>
-            <a class="termek_button cart_btn" href="">Fizetés</a>
+            <a class="termek_button cart_btn" href="./finalize.php">Fizetés</a>
           </div>
         </div>
     </main>

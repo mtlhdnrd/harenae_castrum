@@ -14,7 +14,7 @@
         <header class="fixed-top">
             <nav class="navbar navbar-expand">
             <div class="navbar-brand">
-                <img src="./img/boylgo.jpg">
+                <img src="./img/logo_00000.png">
                 <h2>Harenae Castrum</h2>
             </div>
             <div class="collapse navbar-collapse" id="navbarNav">
