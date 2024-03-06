@@ -84,7 +84,7 @@ h1 {
     text-shadow: 0px 0px 10px var(--light);
     margin: 0;
     text-align: center;
-    font-size: clamp(60px, 10vw, 800px);
+    font-size: 6em;
 }
 
 h2 {
@@ -189,7 +189,11 @@ input:last-child {
 
 .nav-link, .nav-link:hover{
     color: var(--dark);
-    
+    text-decoration: none;
+}
+
+.nav-link p{
+    font-size: 1.3em;
 }
 
 .navbar-toggler{
@@ -289,6 +293,7 @@ input:last-child {
 
 #devs h2{
     font-family: Poppins;
+    font-size: 2em;
 }
 
 /* ------------------------------PRODUCTS.HTML------------------------------ */
@@ -399,7 +404,6 @@ input:last-child {
 #pay_form {
     padding: 5%;
     border-top: 2px solid var(--light);
-
 }
 
 #pay_sum {
@@ -420,6 +424,15 @@ input:last-child {
     margin-bottom: 15%;
 }
 
+#delete_btn{
+    padding: 20px;
+    font-size: 1em;
+}
+
+#user_input{
+    height: 100%;
+}
+
 /* ------------------------------FINALIZE.HTML------------------------------ */
 
 .finalize_btn {
@@ -432,115 +445,161 @@ input:last-child {
 
 @media only screen and (max-width: 800px) {
     
-        body {
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none; 
-        }
-        
+    body {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none; 
+    }
+
+    h1 {
+        font-size: 7em; /* Adjust as needed */
+        margin: 20px;
+        margin-top: 70px;
+        margin-bottom: 30px;
+    }
+
+    h2 {
+        font-size: 3rem; /* Adjust as needed */
+    }
+    
+    p {
+        font-size: 1.6rem; /* Adjust as needed */
+    }
+    
+    main {
+        height: fit-content;
+    }
+
+    body::-webkit-scrollbar {
+        display: none;
+    }
 /* ------------------------------INDEX.HTML------------------------------ */
 
-        .index_body{
-            overflow: visible;
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none; 
-        }
+    .index_body{
+        overflow: visible;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none; 
+    }
+
+    .bottom_div {
+        position: static; /* Change position to static so it flows within the document */
+        height: auto; /* Remove fixed height */
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items vertically */
+        padding: 20px; /* Adjust padding */
+    }
+    
+    .bottom_item {
+        width: 100%;
+    }
+    
+    #arrow_div {
+        display: none;
+    }
+    
+    footer {
+        height: fit-content;
+        margin-top: 20px; /* Add margin to create space between main content and footer */
+        position: flex; /* Change position to static */
+        bottom: auto; /* Reset bottom property */
+    }
+
+    .portrait{
+        flex-direction: column;
+        height: 100% ;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .portrait_div{
+        margin-top: 30px;
+        height: 300px;
+        width: 225px;
+    }
+
+    .portrait_div:last-child{
+        margin-bottom: 30px;
+    }
+
+    #devs{
+        text-indent: 0;
+        position:relative;
+        margin: 20px 0px;
+    }
+
 /* ------------------------------PRODUCTS.HTML------------------------------ */
-        .item {
-            width:100vh;
-        }
 
-        .product_item{
-            flex-direction: column;
-            height:fit-content;
-            width: 70%;
-            margin: 15%;
-            padding: 15px;
-            justify-content: center;
-        }
+    .product_item{
+        flex-direction: column;
+        height:fit-content;
+        width: 70%;
+        margin: 15%;
+        padding: 15px;
+        justify-content: center;
+    }
 
-        .product_desc{
-            width: 100%;
-        }
-        
-        .product_desc h2{
-            font-size: 2em;
-        }
+    .product_desc{
+        width: 100%;
+    }
 
-        .add{
-            border: none;
-        }
+    #details h2{
+        font-size: 2rem;
+    }
 
-        h1 {
-            font-size: clamp(40px, 10vw, 800px); /* Adjust as needed */
-            margin: 20px;
-            margin-top: 70px;
-            margin-bottom: 30px;
-        }
+    .add{
+        border: none;
+    }
+
+/* ------------------------------CART.HTML------------------------------ */
+
     
-        h2 {
-            font-size: 2.5rem; /* Adjust as needed */
-        }
+
     
-        p {
-            font-size: 1.6rem; /* Adjust as needed */
-        }
+
     
-        main {
-            height: fit-content;
-        }
-    
-        .bottom_div {
-            position: static; /* Change position to static so it flows within the document */
-            height: auto; /* Remove fixed height */
-            flex-direction: column; /* Stack items vertically */
-            align-items: center; /* Center items vertically */
-            padding: 20px; /* Adjust padding */
-        }
-    
-        .bottom_item {
-            width: 100%;
-        }
-    
-        #arrow_div {
-            display: none;
-        }
-    
-        footer {
-            height: fit-content;
-            margin-top: 20px; /* Add margin to create space between main content and footer */
-            position: flex; /* Change position to static */
-            bottom: auto; /* Reset bottom property */
-        }
 
-        .portrait{
-            flex-direction: column;
-            height: 100% ;
-            display: flex;
-            justify-content: space-evenly;
-        }
 
-        .portrait_div{
-            margin-top: 30px;
-            height: 300px;
-            width: 225px;
-        }
 
-        .portrait_div:last-child{
-            margin-bottom: 30px;
-        }
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    margin-top: 10px; /* Adjust as needed */
+    padding: 10px 0;
+    width: 200px; /* Adjust width as needed */
+    animation: dropdown-animation 0.3s ease-in-out forwards;
+}
 
-        body::-webkit-scrollbar {
-            display: none;
-        }
+@keyframes dropdown-animation {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-        #devs{
-            text-indent: 0;
-            position:relative;
-            margin: 20px 0px;
-        }
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f5f5f5;
+}
 
 
 
@@ -548,12 +607,14 @@ input:last-child {
 
 
 
+    .navbar-brand{
+        justify-content: space-between;
+        width:100%;
+    }
 
-
-
-
-
-
+    #hamburger_div{
+        justify-self:end;
+    }
 
     .navbar-nav {
         display: none;
@@ -570,13 +631,16 @@ input:last-child {
         background-color: #fff;
         padding: 15px;
         border: 1px solid #ddd;
-        display: none;
     }
 
     .navbar-collapse ul {
         display: none;
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    #hamburger{
+        padding: 30px;
     }
 
     .show {

@@ -46,6 +46,10 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function toggleMenu() {
-    var menu = document.getElementById("navbarNav");
-    menu.classList.toggle("show");
+    var dropdownMenu = document.getElementById("dropdownMenu");
+    if (dropdownMenu.style.display === "block") {
+        dropdownMenu.style.display = "none";
+    } else {
+        dropdownMenu.style.display = "block";
+    }
 }

@@ -53,7 +53,7 @@
         <label for="people">Fő (db):</label>
         <input type="number" id="people" name="people">
             </form>
-            <a class="termek_button cart_btn" href="">Visszavonás</a>
+            <a class="termek_button" id="delete_btn" href="">Visszavonás</a>
           </div>
         </div>
         <div class="pay_column" id="column2">
