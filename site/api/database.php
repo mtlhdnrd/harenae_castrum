@@ -48,10 +48,34 @@
         return json_encode($planets);
     }
 
+    function get_planet_id_by_name($name) {
+        $query = "SELECT ID FROM planet WHERE planet.name = '".escape_string($name)."';";
+        echo "<br>".$query."<br>";
+        $result = $GLOBALS["conn"]->query($query);
+
+        if($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            return $row["ID"];
+        } else {
+            echo "<h1>FATAL: planet not found</h1>";
+            http_response_code(400);
+        }
+    }
+
     function get_planet_by_id($id) {
-        $query = "SELECT `ID`, `name`, `image`, `description`, `hostility`, `landable`, `price`, `infopanel` FROM planet WHERE ID = "
+        $query = "SELECT `name`, `image`, `description`, `hostility`, `landable`, `price`, `infopanel` FROM planet WHERE ID = "
             .escape_string($id).";";
         // query planet, return json
+        $result = $GLOBALS["conn"]->query($query);
+
+        if($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            return json_encode($row);
+        } else {
+            echo "<h1>FATAL: planet not found</h1>";
+            http_response_code(400);
+        }
+
     }
 
     function escape_string($s) {
