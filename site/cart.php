@@ -42,18 +42,23 @@
           </div>
           <div class="pay_item" id="pay_form">
             <form action="./finalize.php" method="post" id="user_input">
-              <label for="name">Név: </label>
-        <input type="text" id="name" name="name" required>
-        <label for="date">Utazás dátuma:</label>
-        <input type="date" id="date" name="date" required>
-        <label for="return_date">Visszaút dátuma (opcionális):</label>
-        <input type="date" id="return_date" name="return_date">
-        <label for="from">Honnan?:</label>
-        <input type="text" id="from" name="from" required>
-        <label for="people">Fő (db):</label>
-        <input type="number" id="people" name="people" min="1" value="1" required>
+                <label for="name">Név: </label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="date">Utazás dátuma:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="return_date">Visszaút dátuma (opcionális):</label>
+                <input type="date" id="return_date" name="return_date">
+
+                <label for="from">Honnan?:</label>
+                <input type="text" id="from" name="from" required>
+
+                <label for="people">Fő (db):</label>
+                <input type="number" id="people" name="people" min="1" value="1" required>
+
+                <input type="button" id="delete_btn" value="Visszavonás" class="termek_button" id="delete_btn">
             </form>
-            <a class="termek_button" id="delete_btn" href="">Visszavonás</a>
           </div>
         </div>
         <div class="pay_column" id="column2">

@@ -107,18 +107,12 @@ form {
 
 label {
     width: 30%;
-    margin-bottom: 30px;
 }
 
 input {
     width: 70%;
-    margin-bottom: 30px;
     height: 30px;
     color: var(--dark);
-}
-
-input:last-child {
-    margin: 0;
 }
 
 /*többször felhasznált jelölők*/
@@ -164,6 +158,7 @@ input:last-child {
 
 .navbar-nav {
     float: right;
+    padding: 0;
 }
 
 .navbar-nav li {
@@ -185,6 +180,7 @@ input:last-child {
 
 #navbarNav {
     height: 100%;
+    flex-wrap: nowrap;
 }
 
 .nav-link, .nav-link:hover{
@@ -193,13 +189,20 @@ input:last-child {
 }
 
 .nav-link p{
-    font-size: 1.3em;
+    font-size: clamp(16px, 1em, 30px);
 }
 
 .navbar-toggler{
     display: none;
 }
 
+#hamburger_div{
+    display: none;
+}
+
+.dropdown-menu{
+    left: auto;
+}
 /* ------------------------------INDEX.HTML------------------------------ */
 
 .index_body {
@@ -366,6 +369,7 @@ input:last-child {
 
 #column1 {
     width: 75%;
+    position: relative;
 }
 
 #column2 {
@@ -374,7 +378,7 @@ input:last-child {
 }
 
 .pay_item {
-    height: 50%;
+    height: 30%;
     width: 100%;
     padding: 15px;
     display: flex;
@@ -392,18 +396,18 @@ input:last-child {
     font-family: Poppins;
 }
 
-.pay_item form input[type="text"],
+/* .pay_item form input[type="text"],
 .pay_item form input[type="date"] {
-    margin-bottom: 2%; /* Adjust margin between inputs */
-}
+    margin-bottom: 2%; Adjust margin between inputs
+} */
 
 .pay_item p {
     margin:auto;
 }
 
 #pay_form {
-    padding: 5%;
     border-top: 2px solid var(--light);
+    height: 100%;
 }
 
 #pay_sum {
@@ -427,10 +431,18 @@ input:last-child {
 #delete_btn{
     padding: 20px;
     font-size: 1em;
+    align-items: center;
+    width: 20%;
+    margin-left: 7.5%;
+
 }
 
 #user_input{
     height: 100%;
+}
+
+#people{
+    width: 35%;
 }
 
 /* ------------------------------FINALIZE.HTML------------------------------ */
@@ -568,6 +580,7 @@ input:last-child {
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     z-index: 1;
+    float: right;
     margin-top: 10px; /* Adjust as needed */
     padding: 10px 0;
     width: 200px; /* Adjust width as needed */
@@ -633,6 +646,9 @@ input:last-child {
         border: 1px solid #ddd;
     }
 
+    .collapse .navbar-collapse{
+        display: none !important;
+    }
     .navbar-collapse ul {
         display: none;
         flex-direction: column;
@@ -643,7 +659,12 @@ input:last-child {
         padding: 30px;
     }
 
-    .show {
-        display: block !important;
+    #hamburger_div{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    #navbarNav{
+        display: none;
     }
 }

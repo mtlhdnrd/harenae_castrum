@@ -20,12 +20,12 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
-        <div class="navbar-brand" id="hamburder_div">
+        <div class="navbar-brand" id="hamburger_div">
             <!-- Your dropdown menu content here -->
             <ul class="dropdown-menu" id="dropdownMenu">
-                <li><a href="#">Dropdown Item 1</a></li>
-                <li><a href="#">Dropdown Item 2</a></li>
-                <li><a href="#">Dropdown Item 3</a></li>
+                <li><a href="./index.html"><p>Főoldal</a></li>
+                <li><a href="./products.php"><p>Ajánlatok</p></a></li>
+                <li><a href="./cart.php"><p>Kosár</p></a></li>
             </ul>
         </div>
         <div class="collapse navbar-collapse" id="navbarNav">
