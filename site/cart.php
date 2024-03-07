@@ -73,7 +73,7 @@
                             ."?planetID=$planetID"
                         )
                     );
-                echo "<img src='./img/boylgo.jpg' id='pay_img'>";
+                echo "<img src='./img/planets/".$planet->image."' id='pay_img'>";
                 echo "<span style='display: none' id='base_price'>".$planet->price."</span>";
                 echo "<p id='price'>$".$planet->price."</p>";
             ?>
