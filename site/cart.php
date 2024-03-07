@@ -51,7 +51,7 @@
         <label for="from">Honnan?:</label>
         <input type="text" id="from" name="from" required>
         <label for="people">Fő (db):</label>
-        <input type="number" id="people" name="people">
+        <input type="number" id="people" name="people" min="1" value="1" required>
             </form>
             <a class="termek_button" id="delete_btn" href="">Visszavonás</a>
           </div>
@@ -61,12 +61,21 @@
             <?php
             ini_set('display_errors','Off');
                 $planetID = $_POST["planetID"];
+                $planet = json_decode(
+                    file_get_contents(
+                        "http://".$_SERVER['HTTP_HOST']
+                            .implode("/",array_map('rawurlencode',explode("/",dirname($_SERVER['SCRIPT_NAME'])."/api/get_planet_by_id.php")))
+                            ."?planetID=$planetID"
+                        )
+                    );
                 echo "<img src='./img/boylgo.jpg' id='pay_img'>";
-                echo "<p>(ide majd kell az ár)".$planetID."</p>";
+                echo "<span style='display: none' id='base_price'>".$planet->price."</span>";
+                echo "<p id='price'>$".$planet->price."</p>";
             ?>
             <a class="termek_button cart_btn" href="#" onclick='document.getElementById("user_input").submit()'>Fizetés</a>
           </div>
         </div>
     </main>
+    <script src="./script/update_price.js"></script>
 </body>
 </html>
