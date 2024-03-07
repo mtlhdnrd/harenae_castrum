@@ -55,12 +55,12 @@ DROP TABLE IF EXISTS `journey`;
 CREATE TABLE `journey` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `date_recorded` varchar(19) NOT NULL,
-  `active` bit(1) NOT NULL DEFAULT b'0',
   `date_of_journey` varchar(19) NOT NULL,
   `price` int(11) NOT NULL,
   `from` int(11) NOT NULL,
   `to` int(11) NOT NULL,
   `customer` varchar(50) NOT NULL,
+  `number_of_passangers` int(11) NOT NULL DEFAULT 1,
   PRIMARY KEY (`ID`),
   KEY `from` (`from`),
   KEY `to` (`to`),
@@ -127,4 +127,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-03-05 12:35:40
+-- Dump completed on 2024-03-07 13:26:53
