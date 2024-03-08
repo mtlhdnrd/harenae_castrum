@@ -17,14 +17,16 @@
             <img src="./img/logo_00000.png">
             <h2>Harenae Castrum</h2>
             <button class="navbar-toggler" id="hamburger" type="button" onclick="toggleMenu()" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <div class="icon"></div>
+                <div class="icon"></div>
+                <div class="icon"></div>
             </button>
         </div>
         <div class="navbar-brand" id="hamburger_div">
             <!-- Your dropdown menu content here -->
             <ul class="dropdown-menu" id="dropdownMenu">
-                <li><a href="./index.html"><p>Főoldal</a></li>
-                <li><a href="./products.php"><p>Ajánlatok</p></a></li>
+                <li><a href="./index.html"><p>Főoldal</p></a></li>
+                <li><a href="./product.php"><p>Ajánlatok</p></a></li>
                 <li><a href="./cart.php"><p>Kosár</p></a></li>
             </ul>
         </div>
