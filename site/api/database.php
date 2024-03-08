@@ -72,7 +72,7 @@
             $row = $result->fetch_assoc();
             return json_encode($row);
         } else {
-            echo "<h1>FATAL: planet not found</h1>";
+            echo "<h1>ERROR: planet not found</h1>";
             http_response_code(400);
         }
 
