@@ -112,7 +112,7 @@ label {
 
 input {
     width: 70%;
-    height: 30px;
+    height: 25px;
     color: var(--dark);
 }
 
@@ -385,7 +385,7 @@ input {
 }
 
 .pay_item {
-    height: 30%;
+    height: 50%;
     width: 100%;
     padding: 15px;
     display: flex;
@@ -406,7 +406,6 @@ input {
 
 #pay_form {
     border-top: 2px solid var(--light);
-    height: 100%;
 }
 
 #pay_sum {
@@ -424,25 +423,23 @@ input {
 
 .cart_btn { /* Make the button float to the bottom */
     margin:auto;
-    margin-bottom: 15%;
+    margin-bottom: 5%;
+    margin-top: 0;
 }
 
-#delete_btn{
-    padding: 20px;
-    font-size: 1em;
-    align-items: center;
-    width: 20%;
-    margin-left: 7.5%;
-
+.delete{
+    padding: 10px 20px;
+    font-family: Poppins;
+    font-size: 80%;
+    text-decoration:underline;
+    margin: auto;
+    margin-top: 0;
+    margin-bottom: 5%;
 }
 
 #user_input{
-    height: inherit;
-    align-items: center;
-}
-
-#people{
-    width: 35%;
+    height: 100%;
+    row-gap: 5%;
 }
 
 /* ------------------------------FINALIZE.HTML------------------------------ */
@@ -681,6 +678,7 @@ input {
         flex-direction: column;
         align-items: center;
         width: 100%;
+        flex-wrap: nowrap;
       }
     
     #delete_btn{
@@ -689,14 +687,19 @@ input {
 
     #column1{
         width: 80%;
-        height: fit-content;
     }
 
     #column2{
         width: auto;
+        aspect-ratio: 3/4;
+        padding: 0;
     }
 
     label{
         font-size: 150%;
+    }
+
+    .pay_item{
+        display:block;
     }
 }

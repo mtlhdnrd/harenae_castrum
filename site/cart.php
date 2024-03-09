@@ -68,7 +68,7 @@
                 <label for="people">Fő (db):</label>
                 <input type="number" id="people" name="people" min="1" value="1" required>
 
-                <input type="button" id="delete_btn" value="Visszavonás" class="termek_button" id="delete_btn">
+                <!-- <input type="button" id="delete_btn" value="Törlés" class="termek_button" id="delete_btn"> -->
             </form>
           </div>
         </div>
@@ -89,6 +89,7 @@
                 echo "<p id='price'>$".$planet->price."</p>";
             ?>
             <a class="termek_button cart_btn" href="#" onclick='document.getElementById("user_input").submit()'>Fizetés</a>
+            <a class="delete" href="#">Utazás törlés</a>
           </div>
         </div>
     </main>
