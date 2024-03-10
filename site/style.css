@@ -140,14 +140,14 @@ input {
     border-width: 0.37rem;
 }
 
-.termek_button:hover{
+.termek_button:hover {
     color: white;
     background-color: var(--button-bg);
     transition-duration: 0.4s;
     cursor: pointer;
 }
 
-.termek_button:focus{
+.termek_button:focus {
     color: white;
 }
 
@@ -190,20 +190,20 @@ input {
     line-height: 30px;
 }
 
-.nav-link, .nav-link:hover{
+.nav-link, .nav-link:hover {
     color: var(--font2);
     text-decoration: none;
 }
 
-.nav-link p{
+.nav-link p {
     font-size: clamp(16px, 1em, 30px);
 }
 
-.navbar-toggler{
+.navbar-toggler {
     display: none;
 }
 
-.dropdown-menu{
+.dropdown-menu {
     left: auto;
 }
 
@@ -212,7 +212,7 @@ input {
     flex-wrap: nowrap;
 }
 
-#hamburger_div{
+#hamburger_div {
     display: none;
 }
 
@@ -307,7 +307,7 @@ input {
     justify-content: flex-start;
 }
 
-#devs h2{
+#devs h2 {
     font-family: Poppins;
     font-size: 2em;
 }
@@ -361,7 +361,7 @@ input {
     word-break: break-word;
 }
 
-.details h2{
+.details h2 {
     font-size: 2em;
 }
 
@@ -373,7 +373,7 @@ input {
     border-left: solid 1px black;
 }
 
-.add .termek_button{
+.add .termek_button {
     padding: 20px 30px;
     font-size: 25px
 }
@@ -409,7 +409,7 @@ input {
     margin-top: 0;
 }
 
-.delete{
+.delete {
     padding: 10px 20px;
     font-family: Poppins;
     font-size: 80%;
@@ -428,7 +428,7 @@ input {
     border-top: 2px solid var(--font1);
 }
 
-#user_input{
+#user_input {
     height: 100%;
     row-gap: 5%;
 }
@@ -505,7 +505,7 @@ input {
         font-size: 1.6rem;
     }
 
-    label{
+    label {
         font-size: 150%;
     }
 
@@ -522,12 +522,12 @@ input {
         }
     }
 
-    .navbar-brand{
+    .navbar-brand {
         justify-content: space-between;
         width:100%;
     }
 
-    #hamburger_div{
+    #hamburger_div {
         justify-self:end;
     }
 
@@ -535,7 +535,7 @@ input {
         display: none;
     }
 
-    .navbar-toggler{
+    .navbar-toggler {
         display: flex;
     }
 
@@ -546,7 +546,7 @@ input {
         padding: 15px;
     }
 
-    .collapse .navbar-collapse{
+    .collapse .navbar-collapse {
         display: none;
     }
 
@@ -586,23 +586,23 @@ input {
         background-color: var(--dropdown-highlight);
     }
 
-    #hamburger{
+    #hamburger {
         padding: 12px;
         display: flex;
         flex-direction: column;
         row-gap: 6px;
     }
 
-    #hamburger_div{
+    #hamburger_div {
         display: flex;
         justify-content: flex-end;
     }
 
-    #navbarNav{
+    #navbarNav {
         display: none;
     }
 
-    .icon{
+    .icon {
         width: 28px;
         border: 3px var(--hamburger-line) solid;
         border-radius: 2px;
@@ -610,7 +610,7 @@ input {
 
 /* ------------------------------INDEX.HTML------------------------------ */
 
-    .index_body{
+    .index_body {
         overflow: visible;
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;
@@ -632,24 +632,24 @@ input {
         display: none;
     }
 
-    .portrait{
+    .portrait {
         flex-direction: column;
         height: 100% ;
         display: flex;
         justify-content: space-evenly;
     }
 
-    .portrait_div{
+    .portrait_div {
         margin-top: 30px;
         height: 300px;
         width: 225px;
     }
 
-    .portrait_div:last-child{
+    .portrait_div:last-child {
         margin-bottom: 30px;
     }
 
-    #devs{
+    #devs {
         text-indent: 0;
         position:relative;
         margin: 20px 0px;
@@ -657,7 +657,7 @@ input {
 
 /* ------------------------------PRODUCTS.HTML------------------------------ */
 
-    .product_item{
+    .product_item {
         flex-direction: column;
         height:fit-content;
         width: 70%;
@@ -666,25 +666,25 @@ input {
         justify-content: center;
     }
 
-    .product_desc{
+    .product_desc {
         width: 100%;
     }
 
-    .details h2{
+    .details h2 {
         font-size: 3em;
     }
 
-    .add{
+    .add {
         border: none;
     }
 
 /* ------------------------------CART.HTML------------------------------ */
 
-    .pay_column{
+    .pay_column {
         width: 80%;
     }
 
-    #people{
+    #people {
     width: 70%;
     }
 
@@ -696,27 +696,27 @@ input {
         flex-wrap: nowrap;
     }
 
-    #column2{
+    #column2 {
         aspect-ratio: 3/4;
         padding: 0;
         width: 50%;
         margin: 10%;
     }
 
-    .pay_item{
+    .pay_item {
         height:auto;
         flex-direction: unset;
     }
 
-    #pay_sum{
+    #pay_sum {
         flex-direction: column;
     }
 
-    .delete{
+    .delete {
         font-size: 120%;
     }
 
-    .finalize_btn{
+    .finalize_btn {
         margin-top: 10%;
         padding: 3% 5%;
     }
