@@ -45,9 +45,40 @@
     </nav>
 </header>
     <main>
-        <div>
-            <p>Ide csak ki kell írni mit vesz a felhasználó</p>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus odio doloribus voluptates consequatur beatae magnam perferendis dicta? Ipsa commodi quia rem distinctio eum dolore saepe doloremque minima atque magnam dicta, repudiandae fugiat impedit placeat iure excepturi temporibus quae omnis quasi. Dolores excepturi, architecto corrupti nobis adipisci ipsa qui saepe facilis vero totam, quibusdam, eius vitae harum obcaecati nisi maiores doloremque dignissimos sed illum sequi earum quidem ad molestias id? Iure voluptas delectus error quibusdam ut! Quia alias ipsa officiis, dolorem voluptate asperiores ea quisquam laudantium nostrum inventore omnis cumque, doloremque non, totam sint consectetur architecto autem. Laboriosam optio assumenda id.</p>
+        <div class="finalize_details">
+            <?php
+                if(!isset($_POST["planetID"])
+                    || !isset($_POST["name"])
+                    || !isset($_POST["date"])
+                    || !isset($_POST["return_date"])
+                    || !isset($_POST["from"])
+                    || !isset($_POST["people"])) {
+                    echo "<h1>400 Bad request</h1>";
+                    echo "<img src='https://http.cat/400'>";
+                    http_response_code(400);
+                } else {
+                    $customerName = $_POST["name"];
+                    $dateOfJourney = $_POST["date"];
+                    $dateOfReturn = $_POST["return_date"];
+                    $from = $_POST["from"];
+                    $people = $_POST["people"];
+                    $planet = json_decode(
+                        file_get_contents(
+                            "http://".$_SERVER['HTTP_HOST']
+                                .implode("/",array_map('rawurlencode',explode("/",dirname($_SERVER['SCRIPT_NAME'])."/api/get_planet_by_id.php")))
+                                ."?planetID=".$_POST["planetID"]
+                            )
+                        );
+                    echo "<p>Megrendelő neve: ".$customerName."</p>";
+                    echo "<p>Hova: ".$planet->name."</p>";
+                    echo "<p>Honnan: ".$from."</p>";
+                    echo "<p>Utazás napja: ".$dateOfJourney."</p>";
+                    if($dateOfReturn != "") {
+                        echo "<p>Visszaút napja: ".$dateOfReturn."</p>";
+                    }
+                    echo "<p>Utasok száma: ".$people."</p>";
+                }
+            ?>
         </div>
         <a class="termek_button finalize_btn" href="">Fizetés</a>
     </main>

@@ -446,6 +446,10 @@ input {
     border: 2px solid var(--font1);
 }
 
+#pay_sum h2 {
+    margin: 5px auto;
+}
+
 #pay_img {
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -456,6 +460,10 @@ input {
 
 .finalize_btn {
     padding: 2% 3%;
+}
+
+.finalize_details {
+    width: 100%;
 }
 
 /* ------------------------------RESPONSIVE------------------------------ */

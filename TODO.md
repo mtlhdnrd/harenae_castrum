@@ -6,6 +6,7 @@
 - ~~cart.php required inputs~~
 - receipt
 - ~~datalist for cart "from" field~~
+- finalize.php summary
 
 # Bugs
 ## Major
@@ -20,3 +21,4 @@
 - actually save cart planetID to session so it's not just another random page
 
 ## Minor
+- finalize.php summary could look better
