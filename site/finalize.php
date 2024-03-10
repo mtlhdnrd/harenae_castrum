@@ -57,6 +57,7 @@
                     echo "<img src='https://http.cat/400'>";
                     http_response_code(400);
                 } else {
+                    $planetID = $_POST["planetID"];
                     $customerName = $_POST["name"];
                     $dateOfJourney = $_POST["date"];
                     $dateOfReturn = $_POST["return_date"];
@@ -66,21 +67,37 @@
                         file_get_contents(
                             "http://".$_SERVER['HTTP_HOST']
                                 .implode("/",array_map('rawurlencode',explode("/",dirname($_SERVER['SCRIPT_NAME'])."/api/get_planet_by_id.php")))
-                                ."?planetID=".$_POST["planetID"]
+                                ."?planetID=".$planetID
                             )
                         );
+
+                    $price = $people * $planet->price;
                     echo "<p>Megrendelő neve: ".$customerName."</p>";
                     echo "<p>Hova: ".$planet->name."</p>";
                     echo "<p>Honnan: ".$from."</p>";
                     echo "<p>Utazás napja: ".$dateOfJourney."</p>";
                     if($dateOfReturn != "") {
+                        $price *= 2;
                         echo "<p>Visszaút napja: ".$dateOfReturn."</p>";
                     }
                     echo "<p>Utasok száma: ".$people."</p>";
+                    echo "<p>Fizetendő összeg: $".$price."</p>";
+
+                    // please actually make a post request this is painful to look at
+                    echo "<form hidden action='./api/order.php' method='post'>";
+                    echo "<input name='planetID' value='".$planetID."'>";
+                    echo "<input name='name' value='".$customerName."'>";
+                    echo "<input name='date' value='".$dateOfJourney."'>";
+                    echo "<input name='return_date' value='".$dateOfReturn."'>";
+                    echo "<input name='from' value='".$from."'>";
+                    echo "<input name='participants' value='".$people."'>";
+                    echo "<input name='price' value='".$price."'>";
+                    echo "<input type='submit' id='bootleg_post_request'>";
+                    echo "</form>";
                 }
             ?>
         </div>
-        <a class="termek_button finalize_btn" href="">Fizetés</a>
+        <a class="termek_button finalize_btn" onclick="document.getElementById('bootleg_post_request').click()">Fizetés</a>
     </main>
 </body>
 </html>

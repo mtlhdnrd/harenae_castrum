@@ -1,12 +1,12 @@
 # MVP
-- reservation
+- ~~reservation~~ i think?
 - ~~delete item from cart~~ kinda?
 - ~~cart.php base functionality~~
 - ~~cart.php show planet description~~
 - ~~cart.php required inputs~~
 - receipt
 - ~~datalist for cart "from" field~~
-- finalize.php summary
+- ~~finalize.php summary~~
 
 # Bugs
 ## Major
@@ -22,3 +22,4 @@
 
 ## Minor
 - finalize.php summary could look better
+- return journey shouldn't just double the price, it should calculate journey to that planet
