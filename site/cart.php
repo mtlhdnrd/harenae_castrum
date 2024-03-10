@@ -49,7 +49,17 @@
     <main>
         <div class="pay_column" id="column1">
           <div class="pay_item" id="pay_detail">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur dolores vero similique repellendus adipisci, cum, illo non quibusdam laborum temporibus facere nesciunt qui officiis, quas fugiat eveniet provident ipsam est! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos eos, ex reprehenderit, cumque earum iusto nam numquam consequatur deserunt placeat atque dolorum minus architecto, veniam ullam non quos delectus harum.</p>
+            <?php
+                $planetID = $_POST["planetID"];
+                $planet = json_decode(
+                    file_get_contents(
+                        "http://".$_SERVER['HTTP_HOST']
+                            .implode("/",array_map('rawurlencode',explode("/",dirname($_SERVER['SCRIPT_NAME'])."/api/get_planet_by_id.php")))
+                            ."?planetID=$planetID"
+                        )
+                    );
+                echo "<p>".$planet->description."</p>";
+            ?>
           </div>
           <div class="pay_item" id="pay_form">
             <form action="./finalize.php" method="post" id="user_input">
@@ -67,6 +77,7 @@
 
                 <label for="people">Fő (db):</label>
                 <input type="number" id="people" name="people" min="1" value="1" required>
+                <input hidden type="submit" id="submit_button">
 
                 <!-- <input type="button" id="delete_btn" value="Törlés" class="termek_button" id="delete_btn"> -->
             </form>
@@ -75,20 +86,12 @@
         <div class="pay_column" id="column2">
           <div class="pay_item" id="pay_sum">
             <?php
-            ini_set('display_errors','Off');
-                $planetID = $_POST["planetID"];
-                $planet = json_decode(
-                    file_get_contents(
-                        "http://".$_SERVER['HTTP_HOST']
-                            .implode("/",array_map('rawurlencode',explode("/",dirname($_SERVER['SCRIPT_NAME'])."/api/get_planet_by_id.php")))
-                            ."?planetID=$planetID"
-                        )
-                    );
+                ini_set('display_errors','Off');
                 echo "<img src='./img/planets/".$planet->image."' id='pay_img'>";
                 echo "<span style='display: none' id='base_price'>".$planet->price."</span>";
                 echo "<p id='price'>$".$planet->price."</p>";
             ?>
-            <a class="termek_button cart_btn" href="#" onclick='document.getElementById("user_input").submit()'>Fizetés</a>
+            <a class="termek_button cart_btn" onclick='document.getElementById("submit_button").click()'>Fizetés</a>
             <a class="delete" href="#">Utazás törlés</a>
           </div>
         </div>
