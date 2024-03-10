@@ -5,6 +5,7 @@
 - ~~cart.php show planet description~~
 - ~~cart.php required inputs~~
 - receipt
+- ~~datalist for cart "from" field~~
 
 # Bugs
 ## Major

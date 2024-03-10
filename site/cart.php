@@ -79,13 +79,24 @@
                 <input type="date" id="return_date" name="return_date">
 
                 <label for="from">Honnan?:</label>
-                <input type="text" id="from" name="from" required>
+                <input type="text" id="from" list="planet_list" name="from" required>
+                <datalist id="planet_list">
+                    <?php
+                        $planets = json_decode(
+                            file_get_contents(
+                                "http://".$_SERVER['HTTP_HOST']
+                                    .implode("/",array_map('rawurlencode',explode("/",dirname($_SERVER['SCRIPT_NAME'])."/api/get_planets.php")))
+                                )
+                            );
+                        foreach($planets as $planet) {
+                            echo "<option value='".$planet->name."'>";
+                        }
+                    ?>
+                </datalist>
 
                 <label for="people">Fő (db):</label>
                 <input type="number" id="people" name="people" min="1" value="1" required>
                 <input hidden type="submit" id="submit_button">
-
-                <!-- <input type="button" id="delete_btn" value="Törlés" class="termek_button" id="delete_btn"> -->
             </form>
           </div>
         </div>
@@ -103,5 +114,6 @@
         </div>
     </main>
     <script src="./script/update_price.js"></script>
+    <script src="./script/invalidate.js"></script>
 </body>
 </html>
