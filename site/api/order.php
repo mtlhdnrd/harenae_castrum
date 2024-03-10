@@ -26,11 +26,11 @@
         $fromID = get_planet_id_by_name($from);
 
         if($dateOfReturn == "") {
-            echo record_journey($customerID, $dateOfJourney, $fromID, $planetID, $participants, $price);
+            record_journey($customerID, $dateOfJourney, $fromID, $planetID, $participants, $price);
         } else {
-            echo record_return_journey($customerID, $dateOfJourney, $fromID, $planetID, $participants, $price, $dateOfReturn);
+            record_return_journey($customerID, $dateOfJourney, $fromID, $planetID, $participants, $price, $dateOfReturn);
         }
 
         // commented to debug the query generation
-        //header("Location: ".$_SERVER["HTTP_REFERER"]);
+        header("Location: ".$_SERVER["HTTP_REFERER"]."?success=1");
     }

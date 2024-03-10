@@ -466,6 +466,11 @@ input {
     width: 100%;
 }
 
+.feedback {
+    text-align: center;
+    font-size: 150%;
+}
+
 /* ------------------------------RESPONSIVE------------------------------ */
 
 

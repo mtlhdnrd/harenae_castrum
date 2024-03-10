@@ -47,7 +47,14 @@
     <main>
         <div class="finalize_details">
             <?php
-                if(!isset($_POST["planetID"])
+                if(isset($_GET["success"])) {
+                    $success = $_GET["success"];
+                    if($success) {
+                        echo "<p class='feedback'>Sikeres rendelés</p>";
+                    } else {
+                        echo "<p class='feedback'>Sikertelen rendelés</p>";
+                    }
+                } else if(!isset($_POST["planetID"])
                     || !isset($_POST["name"])
                     || !isset($_POST["date"])
                     || !isset($_POST["return_date"])
@@ -97,7 +104,11 @@
                 }
             ?>
         </div>
-        <a class="termek_button finalize_btn" onclick="document.getElementById('bootleg_post_request').click()">Fizetés</a>
+        <?php
+            if(!isset($_GET["success"])) {
+                echo "<a class='termek_button finalize_btn' onclick=\"document.getElementById('bootleg_post_request').click()\">Fizetés</a>";
+            }
+        ?>
     </main>
 </body>
 </html>

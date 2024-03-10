@@ -1,5 +1,5 @@
 # MVP
-- ~~reservation~~ i think?
+- ~~reservation~~
 - ~~delete item from cart~~ kinda?
 - ~~cart.php base functionality~~
 - ~~cart.php show planet description~~

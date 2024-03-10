@@ -110,7 +110,6 @@
             .$customerName.'");';
 
         $result = $GLOBALS["conn"]->query($query);
-        return $result;
     }
 
     // bit of a monkey solution but it kinda works
