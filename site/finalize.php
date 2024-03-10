@@ -6,31 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
-    <script src="./script/jump_animation.js"></script>
+    <script src="./script/menu.js"></script>
     <title>Fizetés</title>
 </head>
 <body>
-    <header class="fixed-top">
-        <nav class="navbar navbar-expand">
-          <div class="navbar-brand">
-            <img src="./img/boylgo.jpg">
+<header class="fixed-top">
+    <nav class="navbar navbar-expand">
+        <div class="navbar-brand">
+            <img src="./img/logo_00000.png">
             <h2>Harenae Castrum</h2>
-          </div>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="./index.html"><p>Főoldal</p></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./product.php"><p>Ajánlatok</p><span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./cart.php"><p>Kosár</p></a>
-              </li>
+            <button class="navbar-toggler" id="hamburger" type="button" onclick="toggleMenu()" aria-label="Toggle navigation">
+                <div class="icon"></div>
+                <div class="icon"></div>
+                <div class="icon"></div>
+            </button>
+        </div>
+        <div class="navbar-brand" id="hamburger_div">
+            <ul class="dropdown-menu" id="dropdownMenu">
+                <li><a href="./index.html"><p>Főoldal</p></a></li>
+                <li><a href="./product.php"><p>Ajánlatok</p></a></li>
+                <li><a href="./cart.php"><p>Kosár</p></a></li>
             </ul>
-          </div>
-        </nav>
-      </header>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html"><p>Főoldal</p></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="./product.php"><p>Ajánlatok</p></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./cart.php"><p>Kosár</p></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
     <main>
         <div>
             <p>Ide csak ki kell írni mit vesz a felhasználó</p>

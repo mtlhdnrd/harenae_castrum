@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="style.css">
-        <script src="./script/jump_animation.js"></script>
+        <script src="./script/menu.js"></script>
         <script src="./script/overlay.js"></script>
         <title>Termékek</title>
     </head>
@@ -23,7 +23,6 @@
             </button>
         </div>
         <div class="navbar-brand" id="hamburger_div">
-            <!-- Your dropdown menu content here -->
             <ul class="dropdown-menu" id="dropdownMenu">
                 <li><a href="./index.html"><p>Főoldal</p></a></li>
                 <li><a href="./product.php"><p>Ajánlatok</p></a></li>

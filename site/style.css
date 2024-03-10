@@ -1,8 +1,16 @@
 /* root */
 :root {
-    --dark: #070F2B;
     --blue: #1B1A55;
-    --light: #dbdcde;
+    --font1: #dbdcde;
+    --font2: #070F2B;
+    --headfoot: #dbdcde;
+    --button: #dbdcde;
+    --button-bg: #070F2B;
+    --product-bg: #dbdcde;
+    --dropdown-highlight: #c1c2c4; /*csak üssön a headfoot-tól*/
+    --hamburger-bg: #ebeced;
+    --hamburger-line: #070F2B;
+
 }
 /*importált betűtípusok*/
 @font-face {
@@ -30,29 +38,31 @@ body {
     background-image: url(./img/listings_00000.png);
     background-size: cover;
     overflow: visible;
-    color: var(--light);
+    color: var(--font1);
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
     font-size: calc(0.9vw + 0.9vh);
     overflow-y: scroll;
 }
 
+/* görgetés elrejtése (Firefox) */
+
 html {
     scrollbar-width: none;
   }
   
-  /* Hide scrollbar for Webkit based browsers */
+/* görgetés elrejtése webkit alapú böngészőkben (Chrome, Safari) */
 body::-webkit-scrollbar {
     display: none;
 }
 
 header {
-    background-color: var(--light);
+    background-color: var(--headfoot);
     height: 100px;
     width: 100%;
     padding: 25px;
     position: fixed;
-    color: var(--dark);
+    color: var(--font2);
     z-index: 1000;
 }
 
@@ -70,7 +80,7 @@ main {
 footer {
     height: 80vh;
     width: 100%;
-    background: var(--light);
+    background: var(--headfoot);
     position: absolute;
     bottom: -80vh;
     transition: bottom 0.5s ease;
@@ -82,7 +92,7 @@ footer {
 /*szöveg alap jelölők*/
 h1 {
    
-    text-shadow: 0px 0px 10px var(--light);
+    text-shadow: 0px 0px 10px var(--font1);
     margin: 0;
     text-align: center;
     font-size: 6em;
@@ -113,7 +123,7 @@ label {
 input {
     width: 70%;
     height: 25px;
-    color: var(--dark);
+    color: var(--font2);
 }
 
 /*többször felhasznált jelölők*/
@@ -122,17 +132,17 @@ input {
     background-color: rgba(0, 0, 0, 0.6);
     font-family: Ailerons;
     font-size: 2em;
-    color: var(--light);
+    color: var(--button);
     padding: 5% 9%;
-    border-color: var(--light);
-    text-shadow: 0px 0px 10px var(--light);
-    box-shadow:  0px 0px 10px var(--light);
+    border-color: var(--button);
+    text-shadow: 0px 0px 10px var(--button);
+    box-shadow:  0px 0px 10px var(--button);
     border-width: 0.37rem;
 } 
 
 .termek_button:hover{
     color: white;
-    background-color: var(--dark);
+    background-color: var(--button-bg);
     transition-duration: 0.4s;
 }
 
@@ -141,6 +151,15 @@ input {
 }
 
 /* ------------------------------NAV------------------------------ */
+
+.navbar {
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    margin: 0px;
+}
 
 .navbar-brand {
     display: flex;
@@ -154,7 +173,7 @@ input {
 }
 
 .navbar-brand span {
-    color: var(--light);
+    color: var(--font1);
 }
 
 .navbar-nav {
@@ -170,22 +189,8 @@ input {
     line-height: 30px;
 }
 
-.navbar {
-    position: relative;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    margin: 0px;
-}
-
-#navbarNav {
-    height: 100%;
-    flex-wrap: nowrap;
-}
-
 .nav-link, .nav-link:hover{
-    color: var(--dark);
+    color: var(--font2);
     text-decoration: none;
 }
 
@@ -197,14 +202,18 @@ input {
     display: none;
 }
 
-#hamburger_div{
-    display: none;
-}
-
 .dropdown-menu{
     left: auto;
 }
 
+#navbarNav {
+    height: 100%;
+    flex-wrap: nowrap;
+}
+
+#hamburger_div{
+    display: none;
+}
 
 /* ------------------------------INDEX.HTML------------------------------ */
 
@@ -248,12 +257,31 @@ input {
     left: 50%;
     transform: translateX(-50%);
     cursor: pointer;
-    z-index: 9999; /* Ensure the arrow is above other elements */
-    width: 60px; /* Adjust the width as needed */
-    height: auto; /* Ensure aspect ratio is maintained */
-    transform-origin: center center; /* Set the rotation origin to the center of the image */
-    position: absolute; /* Set position to absolute to fix its position */
+    z-index: 9999;
+    width: 60px;
+    height: auto;
+    transform-origin: center center;
+    position: absolute;
     filter: invert(1);
+}
+
+.portrait {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.portrait_div {
+    width: auto;
+    height: 50%;
+}
+
+.portrait_img {
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 3 / 4;
 }
 
 #arrow_div {
@@ -269,30 +297,11 @@ input {
     padding: 20px
 }
 
-.portrait {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.portrait_div {
-    width: auto;
-    height: 50%;
-    background-color: black;
-}
-
-.portrait_img {
-    height: 100%;
-    width: 100%;
-    aspect-ratio: 3 / 4;
-}
 
 #devs {
     height: 25%;
     position: absolute;
-    color: var(--dark);
+    color: var(--font2);
     text-indent: 25px;
     justify-content: flex-start;
 }
@@ -308,31 +317,13 @@ input {
     height:fit-content;
 }
 
-.overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black overlay */
-    z-index: 9999; /* Ensure overlay is on top of other content */
-    text-align: center;
-}
-
-.overlay img {
-    margin-top: 20vh; /* Adjust as needed */
-    max-width: 80%; /* Adjust as needed */
-    max-height: 60vh; /* Adjust as needed */
-}
-
 .product_item {
     height: 225px;
     width: 800px;
     margin: 20px;
-    background-color: var(--light);
+    background-color: var(--product-bg);
     display: flex;
-    color: black;
+    color: var(--font2);
 }
 
 .product_desc h2 {
@@ -343,6 +334,24 @@ input {
 .product_desc a {
     padding: 10px 30px;
 }
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); 
+    z-index: 9999;
+    text-align: center;
+}
+
+.overlay img {
+    margin-top:20vh;
+    max-width: 80%;
+    max-height: 70vh;
+} 
 
 .details {
     width: 45%;
@@ -374,16 +383,6 @@ input {
     height:100%
 }
 
-#column1 {
-    width: 75%;
-    position: relative;
-}
-
-#column2 {
-    width: 25%;
-    padding-left: 20px;
-}
-
 .pay_item {
     height: 50%;
     width: 100%;
@@ -392,9 +391,8 @@ input {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    flex-direction: column; /* Added to stack items vertically */
+    flex-direction: column; 
 }
-
 
 .pay_item form {
     font-family: Poppins;
@@ -404,24 +402,7 @@ input {
     margin:auto;
 }
 
-#pay_form {
-    border-top: 2px solid var(--light);
-}
-
-#pay_sum {
-    height: 100%;
-    justify-content: start;
-    align-items: start;
-    padding: 0;
-    border: 2px solid var(--light);
-}
-
-#pay_img {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-}
-
-.cart_btn { /* Make the button float to the bottom */
+.cart_btn { 
     margin:auto;
     margin-bottom: 5%;
     margin-top: 0;
@@ -437,15 +418,42 @@ input {
     margin-bottom: 5%;
 }
 
+#column1 {
+    width: 75%;
+    position: relative;
+}
+
+#pay_form {
+    border-top: 2px solid var(--font1);
+}
+
 #user_input{
     height: 100%;
     row-gap: 5%;
 }
 
+#column2 {
+    width: 25%;
+    padding-left: 20px;
+}
+
+#pay_sum {
+    height: 100%;
+    justify-content: start;
+    align-items: start;
+    padding: 0;
+    border: 2px solid var(--font1);
+}
+
+#pay_img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
 /* ------------------------------FINALIZE.HTML------------------------------ */
 
 .finalize_btn {
-    padding: 3% 4%;
+    padding: 2% 3%;
 }
 
 /* ------------------------------RESPONSIVE------------------------------ */
@@ -454,62 +462,109 @@ input {
 
 @media only screen and (max-width: 800px) {
     
+/* ------------------------------BASIC------------------------------ */
+
     body {
         text-align: center;
         margin: 0;
         padding: 0;
-        -ms-overflow-style: none;  /* IE and Edge */
+        -ms-overflow-style: none;  /* IE, Edge */
         scrollbar-width: none; 
+    }
+    
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    main {
+        height: fit-content;
+        flex-direction: column;
+    }
+
+    footer {
+        height: fit-content;
+        margin-top: 20px; 
+        position: flex; 
+        bottom: auto; 
     }
 
     h1 {
-        font-size: 7em; /* Adjust as needed */
+        font-size: 7em;
         margin: 20px;
         margin-top: 70px;
         margin-bottom: 30px;
     }
 
     h2 {
-        font-size: 4rem; /* Adjust as needed */
+        font-size: 4rem;
     }
     
     p {
-        font-size: 1.6rem; /* Adjust as needed */
-    }
-    
-    main {
-        height: fit-content;
-        flex-direction: column;
+        font-size: 1.6rem;
     }
 
-    body::-webkit-scrollbar {
-        display: none;
+    label{
+        font-size: 150%;
     }
 
 /* ------------------------------NAV------------------------------ */
 
-    .dropdown-menu {
-        display: none;
-        position: absolute;
-        background-color: #fff;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        z-index: 1;
-        float: right;
-        margin-top: 10px; /* Adjust as needed */
-        padding: 10px 0;
-        width: 200px; /* Adjust width as needed */
-        animation: dropdown-animation 0.3s ease-in-out forwards;
-    }
-    
     @keyframes dropdown-animation {
         from {
             opacity: 0;
             transform: translateY(-10px);
         }
         to {
-            opacity: 1;
+        opacity: 1;
             transform: translateY(0);
         }
+    }
+
+    .navbar-brand{
+        justify-content: space-between;
+        width:100%;
+    }
+
+    #hamburger_div{
+        justify-self:end;
+    }
+
+    .navbar-nav {
+        display: none;
+    }
+
+    .navbar-toggler{
+        display: flex;
+    }
+
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        padding: 15px;
+    }
+
+    .collapse .navbar-collapse{
+        display: none;
+    }
+    
+    .navbar-collapse ul {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        background-color: var(--headfoot);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+        float: right;
+        margin-top: 10px; 
+        padding: 10px 0;
+        width: 200px; 
+        animation: dropdown-animation 0.3s ease-in-out forwards;
     }
     
     .dropdown-menu li {
@@ -521,70 +576,35 @@ input {
         text-align: center;
         padding: 10px;
         text-decoration: none;
-        color: #333;
+        color: var(--font2);
         transition: background-color 0.3s;
     }
     
     .dropdown-menu li a:hover {
-        background-color: #f5f5f5;
+        background-color: var(--dropdown-highlight);
     }
 
-        .navbar-brand{
-            justify-content: space-between;
-            width:100%;
-        }
-    
-        #hamburger_div{
-            justify-self:end;
-        }
-    
-        .navbar-nav {
-            display: none;
-        }
-    
-        .navbar-toggler{
-            display: flex;
-        }
-    
-        .navbar-collapse {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background-color: #fff;
-            padding: 15px;
-            border: 1px solid #ddd;
-        }
-    
-        .collapse .navbar-collapse{
-            display: none !important;
-        }
-        .navbar-collapse ul {
-            display: none;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-    
-        #hamburger{
-            padding: 12px;
-            display: flex;
-            flex-direction: column;
-            row-gap: 6px;
-        }
+    #hamburger{
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 6px;
+    }
 
-        #hamburger_div{
-            display: flex;
-            justify-content: flex-end;
-        }
-    
-        #navbarNav{
-            display: none;
-        }
+    #hamburger_div{
+        display: flex;
+        justify-content: flex-end;
+    }
 
-        .icon{
-            width: 28px;
-            border: 3px black solid;
-            border-radius: 2px;
-        }
+    #navbarNav{
+        display: none;
+    }
+
+    .icon{
+        width: 28px;
+        border: 3px var(--hamburger-line) solid;
+        border-radius: 2px;
+    }
     
 /* ------------------------------INDEX.HTML------------------------------ */
 
@@ -595,11 +615,11 @@ input {
     }
 
     .bottom_div {
-        position: static; /* Change position to static so it flows within the document */
-        height: auto; /* Remove fixed height */
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center items vertically */
-        padding: 20px; /* Adjust padding */
+        position: static; 
+        height: auto; 
+        flex-direction: column; 
+        align-items: center; 
+        padding: 20px; 
     }
     
     .bottom_item {
@@ -610,13 +630,6 @@ input {
         display: none;
     }
     
-    footer {
-        height: fit-content;
-        margin-top: 20px; /* Add margin to create space between main content and footer */
-        position: flex; /* Change position to static */
-        bottom: auto; /* Reset bottom property */
-    }
-
     .portrait{
         flex-direction: column;
         height: 100% ;
@@ -665,8 +678,8 @@ input {
 
 /* ------------------------------CART.HTML------------------------------ */
 
-    .pay_column{
-        height: fit-content;
+    .pay_column{ 
+        width: 80%;
     }
 
     #people{
@@ -679,27 +692,30 @@ input {
         align-items: center;
         width: 100%;
         flex-wrap: nowrap;
-      }
-    
-    #delete_btn{
-        margin: 0;
-    }
-
-    #column1{
-        width: 80%;
     }
 
     #column2{
-        width: auto;
         aspect-ratio: 3/4;
         padding: 0;
-    }
-
-    label{
-        font-size: 150%;
+        width: 50%;
+        margin: 10%;
     }
 
     .pay_item{
-        display:block;
+        height:auto;
+        flex-direction: unset;
+    }
+
+    #pay_sum{
+        flex-direction: column;
+    }
+
+    .delete{
+        font-size: 120%;
+    }
+
+    .finalize_btn{
+        margin-top: 10%;
+        padding: 3% 5%;
     }
 }
