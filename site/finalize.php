@@ -45,7 +45,7 @@
     </nav>
 </header>
     <main>
-        <div>
+        <div class="finalize_details">
             <p>Ide csak ki kell írni mit vesz a felhasználó</p>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus odio doloribus voluptates consequatur beatae magnam perferendis dicta? Ipsa commodi quia rem distinctio eum dolore saepe doloremque minima atque magnam dicta, repudiandae fugiat impedit placeat iure excepturi temporibus quae omnis quasi. Dolores excepturi, architecto corrupti nobis adipisci ipsa qui saepe facilis vero totam, quibusdam, eius vitae harum obcaecati nisi maiores doloremque dignissimos sed illum sequi earum quidem ad molestias id? Iure voluptas delectus error quibusdam ut! Quia alias ipsa officiis, dolorem voluptate asperiores ea quisquam laudantium nostrum inventore omnis cumque, doloremque non, totam sint consectetur architecto autem. Laboriosam optio assumenda id.</p>
         </div>
