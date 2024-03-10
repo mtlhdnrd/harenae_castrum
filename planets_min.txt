@@ -6,4 +6,4 @@ mars: Ismerjen meg egy kultúrát, mely ugyan a Földéhez hasonló alapokkal re
 saturn: Játsszon univerzum legismertebb szórakozóhelyein, fogadjon a legendás Saturn Eight körversenyre, vegyen részt a fényűzés létrájának legmagasabb fokain!
 edax carnium: Mi történik, ha az egyén feldühíti a bolygót, amin áll? A bolygó bosszút áll, az egyén eltűnik.
 mercury: A brutális életkörülmények, ellenséges környezet és kemény munka megtestesülése. A Merkúr embere az életet egy magasabb nehézségi fokon játssza, mégis egy könnyed, boldog társadalmat tudnak felmutatni, ahova bekerülve az ember nem is sejtené, mennyit szenvednek.
-earth: A terraformáló titánok ősatyja, a bolygó, ahonnan naprendszert meghódító Homo sapiens származik. Többmillió éves hagyományok, és egy sokat megélt, tapasztalt társadalom.
+earth: A terraformáló titánok ősatyja, a bolygó, ahonnan a naprendszert meghódító Homo sapiens származik. Többmillió éves hagyományok, és egy sokat megélt, tapasztalt társadalom.

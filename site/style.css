@@ -50,7 +50,7 @@ body {
 html {
     scrollbar-width: none;
   }
-  
+
 /* görgetés elrejtése webkit alapú böngészőkben (Chrome, Safari) */
 body::-webkit-scrollbar {
     display: none;
@@ -91,7 +91,7 @@ footer {
 
 /*szöveg alap jelölők*/
 h1 {
-   
+
     text-shadow: 0px 0px 10px var(--font1);
     margin: 0;
     text-align: center;
@@ -138,12 +138,13 @@ input {
     text-shadow: 0px 0px 10px var(--button);
     box-shadow:  0px 0px 10px var(--button);
     border-width: 0.37rem;
-} 
+}
 
 .termek_button:hover{
     color: white;
     background-color: var(--button-bg);
     transition-duration: 0.4s;
+    cursor: pointer;
 }
 
 .termek_button:focus{
@@ -342,7 +343,7 @@ input {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7); 
+    background: rgba(0, 0, 0, 0.7);
     z-index: 9999;
     text-align: center;
 }
@@ -351,7 +352,7 @@ input {
     margin-top:20vh;
     max-width: 80%;
     max-height: 70vh;
-} 
+}
 
 .details {
     width: 45%;
@@ -391,7 +392,7 @@ input {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    flex-direction: column; 
+    flex-direction: column;
 }
 
 .pay_item form {
@@ -402,7 +403,7 @@ input {
     margin:auto;
 }
 
-.cart_btn { 
+.cart_btn {
     margin:auto;
     margin-bottom: 5%;
     margin-top: 0;
@@ -448,6 +449,7 @@ input {
 #pay_img {
     width: 100%;
     aspect-ratio: 16 / 9;
+    border-bottom: inherit;
 }
 
 /* ------------------------------FINALIZE.HTML------------------------------ */
@@ -461,7 +463,7 @@ input {
 
 
 @media only screen and (max-width: 800px) {
-    
+
 /* ------------------------------BASIC------------------------------ */
 
     body {
@@ -469,9 +471,9 @@ input {
         margin: 0;
         padding: 0;
         -ms-overflow-style: none;  /* IE, Edge */
-        scrollbar-width: none; 
+        scrollbar-width: none;
     }
-    
+
     body::-webkit-scrollbar {
         display: none;
     }
@@ -483,9 +485,9 @@ input {
 
     footer {
         height: fit-content;
-        margin-top: 20px; 
-        position: flex; 
-        bottom: auto; 
+        margin-top: 20px;
+        position: flex;
+        bottom: auto;
     }
 
     h1 {
@@ -498,7 +500,7 @@ input {
     h2 {
         font-size: 4rem;
     }
-    
+
     p {
         font-size: 1.6rem;
     }
@@ -547,7 +549,7 @@ input {
     .collapse .navbar-collapse{
         display: none;
     }
-    
+
     .navbar-collapse ul {
         display: none;
         flex-direction: column;
@@ -561,16 +563,16 @@ input {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         z-index: 1;
         float: right;
-        margin-top: 10px; 
+        margin-top: 10px;
         padding: 10px 0;
-        width: 200px; 
+        width: 200px;
         animation: dropdown-animation 0.3s ease-in-out forwards;
     }
-    
+
     .dropdown-menu li {
         list-style: none;
     }
-    
+
     .dropdown-menu li a {
         display: block;
         text-align: center;
@@ -579,7 +581,7 @@ input {
         color: var(--font2);
         transition: background-color 0.3s;
     }
-    
+
     .dropdown-menu li a:hover {
         background-color: var(--dropdown-highlight);
     }
@@ -605,31 +607,31 @@ input {
         border: 3px var(--hamburger-line) solid;
         border-radius: 2px;
     }
-    
+
 /* ------------------------------INDEX.HTML------------------------------ */
 
     .index_body{
         overflow: visible;
         -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none; 
+        scrollbar-width: none;
     }
 
     .bottom_div {
-        position: static; 
-        height: auto; 
-        flex-direction: column; 
-        align-items: center; 
-        padding: 20px; 
+        position: static;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
     }
-    
+
     .bottom_item {
         width: 100%;
     }
-    
+
     #arrow_div {
         display: none;
     }
-    
+
     .portrait{
         flex-direction: column;
         height: 100% ;
@@ -678,7 +680,7 @@ input {
 
 /* ------------------------------CART.HTML------------------------------ */
 
-    .pay_column{ 
+    .pay_column{
         width: 80%;
     }
 

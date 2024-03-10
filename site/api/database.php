@@ -8,8 +8,9 @@
         public $landable;
         public $price;
         public $infopanel;
+        public $wideimage;
 
-        function __construct($ID, $name, $image, $description, $hostility, $landable, $price, $infopanel) {
+        function __construct($ID, $name, $image, $description, $hostility, $landable, $price, $infopanel, $wideimage) {
             $this->ID = $ID;
             $this->name = $name;
             $this->image = $image;
@@ -18,6 +19,7 @@
             $this->landable = $landable;
             $this->price = $price;
             $this->infopanel = $infopanel;
+            $this->wideimage = $wideimage;
         }
     }
 
@@ -34,13 +36,13 @@
 
     function get_planets() {
         $planets = array();
-        $query = "SELECT `ID`, `name`, `image`, `description`, `hostility`, `landable`, `price`, `infopanel` FROM planet ORDER BY planet.name;";
+        $query = "SELECT `ID`, `name`, `image`, `description`, `hostility`, `landable`, `price`, `infopanel`, `wideimage` FROM planet ORDER BY planet.name;";
         $result = $GLOBALS["conn"]->query($query);
         if($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
                 array_push(
                     $planets,
-                    new Planet($row["ID"], $row["name"], $row["image"], $row["description"], $row["hostility"], $row["landable"], $row["price"], $row["infopanel"])
+                    new Planet($row["ID"], $row["name"], $row["image"], $row["description"], $row["hostility"], $row["landable"], $row["price"], $row["infopanel"], $row["wideimage"])
                 );
             }
         }
@@ -63,7 +65,7 @@
     }
 
     function get_planet_by_id($id) {
-        $query = "SELECT `name`, `image`, `description`, `hostility`, `landable`, `price`, `infopanel` FROM planet WHERE ID = "
+        $query = "SELECT `name`, `image`, `description`, `hostility`, `landable`, `price`, `infopanel`, `wideimage` FROM planet WHERE ID = "
             .escape_string($id).";";
         // query planet, return json
         $result = $GLOBALS["conn"]->query($query);
