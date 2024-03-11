@@ -18,7 +18,7 @@
 # Improvements
 ## Major
 - multi-item cart
-- actually save cart planetID to session so it's not just another random page
+- ~~actually save cart planetID to session so it's not just another random page~~
 
 ## Minor
 - finalize.php summary could look better

@@ -46,7 +46,12 @@
         </nav>
     </header>
     <?php
-        if(!isset($_POST["planetID"])) {
+        session_start();
+        if(isset($_GET["empty_cart"])) {
+            unset($_SESSION["planetID"]);
+            header("Location: ./cart.php");
+        }
+        if(!isset($_POST["planetID"]) && !isset($_SESSION["planetID"])) {
             echo "<main><p class='cartp'>A kosár üres</p></main>";
             echo "<main hidden>";
         } else {
@@ -56,7 +61,12 @@
         <div class="pay_column" id="column1">
           <div class="pay_item" id="pay_detail">
             <?php
-                $planetID = $_POST["planetID"];
+                if(isset($_POST["planetID"])) {
+                    $planetID = $_POST["planetID"];
+                    $_SESSION["planetID"] = $planetID;
+                } else {
+                    $planetID = $_SESSION["planetID"];
+                }
                 $planet = json_decode(
                     file_get_contents(
                         "http://".$_SERVER['HTTP_HOST']
@@ -115,7 +125,7 @@
                 echo "<p id='price'>$".$planet->price."</p>";
             ?>
             <a class="termek_button cart_btn btn" onclick='document.getElementById("submit_button").click()'>Fizetés</a>
-            <a class="delete" href="./cart.php">Utazás törlése</a>
+            <a class="delete" href="./cart.php?empty_cart">Utazás törlése</a>
           </div>
         </div>
     </main>

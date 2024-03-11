@@ -47,12 +47,18 @@
     <main>
         <div class="finalize_details">
             <?php
+                session_start();
                 if(isset($_GET["success"])) {
                     $success = $_GET["success"];
                     if($success) {
                         echo "<p class='feedback'>Sikeres rendelés</p>";
                     } else {
                         echo "<p class='feedback'>Sikertelen rendelés</p>";
+                        if(isset($_GET["reason"])) {
+                            if($_GET["reason"] == "unknown_customer") {
+                                echo "<p class='feedback'>Ismeretlen ügyfél</p>";
+                            }
+                        }
                     }
                 } else if(!isset($_POST["planetID"])
                     || !isset($_POST["name"])
@@ -101,12 +107,26 @@
                     echo "<input name='price' value='".$price."'>";
                     echo "<input type='submit' id='bootleg_post_request'>";
                     echo "</form>";
+
+
+                    $receipt_text = "Megrendelő neve: ".$customerName."\n"
+                        ."Hova: ".$planet->name."\n"
+                        ."Honnan: ".$from."\n"
+                        ."Utazás napja: ".$dateOfJourney."\n";
+                    if($dateOfReturn != "") {
+                        $receipt_text = $receipt_text."Visszaút napja: ".$dateOfReturn."\n";
+                    }
+                    $receipt_text = $receipt_text."Utasok száma: ".$people."\n"
+                        ."Végösszeg: $".$price;
+                    $_SESSION["receipt_text"] = $receipt_text;
                 }
             ?>
         </div>
         <?php
             if(!isset($_GET["success"])) {
                 echo "<a class='termek_button finalize_btn btn' onclick=\"document.getElementById('bootleg_post_request').click()\">Fizetés</a>";
+            } else {
+                echo "<a class='termek_button finalize_btn' href='./receipt.php'>Számla</a>";
             }
         ?>
     </main>
