@@ -126,7 +126,7 @@
             if(!isset($_GET["success"])) {
                 echo "<a class='termek_button finalize_btn btn' onclick=\"document.getElementById('bootleg_post_request').click()\">Fizetés</a>";
             } else {
-                echo "<a class='termek_button finalize_btn' href='./receipt.php'>Számla</a>";
+                echo "<a class='termek_button finalize_btn btn' href='./receipt.php'>Számla</a>";
             }
         ?>
     </main>
