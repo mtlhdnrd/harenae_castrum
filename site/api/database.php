@@ -52,7 +52,6 @@
 
     function get_planet_id_by_name($name) {
         $query = "SELECT ID FROM planet WHERE planet.name = '".escape_string($name)."';";
-        echo "<br>".$query."<br>";
         $result = $GLOBALS["conn"]->query($query);
 
         if($result->num_rows > 0) {
@@ -84,19 +83,38 @@
         return $GLOBALS["conn"]->real_escape_string($s);
     }
 
-    // TODO: make this work and move the garbage from order.php here
-    function record_journey($customerName, $dateOfJourney, $from, $to, $type, $participants) {
-        $planetquery = "SELECT hostility, landable FROM planet WHERE planet.ID = \"".escape_string($to)."\";";
-        $GLOBALS["conn"]->query($planetquery);
+    function get_customer_id_by_name($customerName) {
+        $query = "SELECT `ID` FROM customer WHERE customer.name = '".escape_string($customerName)."';";
+        $result = $GLOBALS["conn"]->query($query);
 
-        // i am way too tired
-        $date_recorded = (new DateTime())->format("Y-m-d");
-        $active = 1;
-        //$price = calculate_price();
-        $query = 'INSERT INTO journey VALUES ("'.$date_recorded.'", "1", "'.escape_string($dateOfJourney).'", "4");';
+        if($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            return $row["ID"];
+        } else {
+            echo "<h1>FATAL: customer not found</h1>";
+            http_response_code(400);
+        }
     }
 
-    function record_return_journey($customerName, $dateOfJourney, $from, $to, $type, $participants, $dateOfReturn) {
-        record_journey($customerName, $dateOfJourney, $from, $to, $type, $participants);
-        record_journey($customerName, $dateOfReturn, $to, $from, $type, $participants);
+    // TODO: make this work and move the garbage from order.php here
+    // way too much trust in the user, price should be recalculated here
+    function record_journey($customerName, $dateOfJourney, $from, $to, $participants, $price) {
+        $date_recorded = date("Y-m-d");
+        $query = 'INSERT INTO journey (`date_recorded`, `date_of_journey`, `price`, `number_of_passangers`, `from`, `to`, `customer`) VALUES ("'
+            .$date_recorded.'", "'
+            .escape_string($dateOfJourney).'", "'
+            .$price.'", "'
+            .$participants.'", "'
+            .$from.'", "'
+            .$to.'", "'
+            .$customerName.'");';
+
+        $result = $GLOBALS["conn"]->query($query);
+    }
+
+    // bit of a monkey solution but it kinda works
+    // price system should definitely be fixed tho. return shouldn't just double it, and this distribution is idiotic
+    function record_return_journey($customerName, $dateOfJourney, $from, $to, $participants, $price, $dateOfReturn) {
+        record_journey($customerName, $dateOfJourney, $from, $to, $participants, $price / 2);
+        record_journey($customerName, $dateOfReturn, $to, $from, $participants, $price / 2);
     }

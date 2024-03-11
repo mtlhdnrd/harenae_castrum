@@ -73,10 +73,12 @@
                 <input type="text" id="name" name="name" required>
 
                 <label for="date">Utazás dátuma:</label>
-                <input type="date" id="date" name="date" required>
+                <?php
+                    echo "<input type='date' id='date' name='date' min='".date("Y-m-d")."' required>";
 
-                <label for="return_date">Visszaút dátuma (opcionális):</label>
-                <input type="date" id="return_date" name="return_date">
+                    echo "<label for='return_date'>Visszaút dátuma (opcionális):</label>";
+                    echo "<input type='date' id='return_date' name='return_date' min='".date("Y-m-d")."'>";
+                ?>
 
                 <label for="from">Honnan?:</label>
                 <input type="text" id="from" list="planet_list" name="from" required>
@@ -88,14 +90,17 @@
                                     .implode("/",array_map('rawurlencode',explode("/",dirname($_SERVER['SCRIPT_NAME'])."/api/get_planets.php")))
                                 )
                             );
-                        foreach($planets as $planet) {
-                            echo "<option value='".$planet->name."'>";
+                        foreach($planets as $current_planet) {
+                            echo "<option value='".$current_planet->name."'>";
                         }
                     ?>
                 </datalist>
 
                 <label for="people">Fő (db):</label>
                 <input type="number" id="people" name="people" min="1" value="1" required>
+                <?php
+                    echo "<input type='hidden' name='planetID' value='".$planetID."'>";
+                ?>
                 <input hidden type="submit" id="submit_button">
             </form>
           </div>
@@ -105,6 +110,7 @@
             <?php
                 ini_set('display_errors','Off');
                 echo "<img src='./img/planets/".$planet->wideimage."' id='pay_img'>";
+                echo "<h2>".$planet->name."</h2>";
                 echo "<span style='display: none' id='base_price'>".$planet->price."</span>";
                 echo "<p id='price'>$".$planet->price."</p>";
             ?>

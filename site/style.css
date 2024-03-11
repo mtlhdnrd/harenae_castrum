@@ -466,6 +466,10 @@ input {
     border: 2px solid var(--font1);
 }
 
+#pay_sum h2 {
+    margin: 5px auto;
+}
+
 #pay_img {
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -478,8 +482,13 @@ input {
     padding: 2% 3%;
 }
 
-.finalize_details{
+.finalize_details {
     width: 100%;
+}
+
+.feedback {
+    text-align: center;
+    font-size: 150%;
 }
 
 /* ------------------------------RESPONSIVE------------------------------ */

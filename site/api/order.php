@@ -6,13 +6,13 @@
         || !isset($_POST["date"])
         || !isset($_POST["return_date"])
         || !isset($_POST["from"])
-        || !isset($_POST["participants"])) {
+        || !isset($_POST["participants"])
+        || !isset($_POST["price"])) {
         echo "<h1>400 Bad request</h1>";
         echo "<img src='https://http.cat/400'>";
         http_response_code(400);
     } else {
         $planets = get_planets();
-        print_r($planets);
 
         $planetID = $_POST["planetID"];
         $customerName = $_POST["name"];
@@ -20,12 +20,17 @@
         $dateOfReturn = $_POST["return_date"];
         $from = $_POST["from"];
         $participants = $_POST["participants"];
+        $price = $_POST["price"];
 
+        $customerID = get_customer_id_by_name($customerName);
         $fromID = get_planet_id_by_name($from);
-        echo $fromID."<br>";
 
-        echo get_planet_by_id($fromID)."<br>";
+        if($dateOfReturn == "") {
+            record_journey($customerID, $dateOfJourney, $fromID, $planetID, $participants, $price);
+        } else {
+            record_return_journey($customerID, $dateOfJourney, $fromID, $planetID, $participants, $price, $dateOfReturn);
+        }
 
         // commented to debug the query generation
-        //header("Location: ".$_SERVER["HTTP_REFERER"]);
+        header("Location: ".$_SERVER["HTTP_REFERER"]."?success=1");
     }
