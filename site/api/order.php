@@ -1,6 +1,8 @@
 <?php
     require_once "database.php";
 
+    session_start();
+
     if(!isset($_POST["planetID"])
         || !isset($_POST["name"])
         || !isset($_POST["date"])
@@ -33,6 +35,8 @@
         } else {
             record_return_journey($customerID, $dateOfJourney, $fromID, $planetID, $participants, $price, $dateOfReturn);
         }
+
+        unset($_SESSION["planetID"]);
 
         header("Location: ".$_SERVER["HTTP_REFERER"]."?success=1");
     }
