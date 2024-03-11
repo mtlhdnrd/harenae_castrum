@@ -47,7 +47,7 @@
     </header>
     <?php
         if(!isset($_POST["planetID"])) {
-            echo "<main><p>A kosár üres</p></main>";
+            echo "<main><p class='cartp'>A kosár üres</p></main>";
             echo "<main hidden>";
         } else {
             echo "<main>";
@@ -108,7 +108,7 @@
                 echo "<span style='display: none' id='base_price'>".$planet->price."</span>";
                 echo "<p id='price'>$".$planet->price."</p>";
             ?>
-            <a class="termek_button cart_btn" onclick='document.getElementById("submit_button").click()'>Fizetés</a>
+            <a class="termek_button cart_btn btn" onclick='document.getElementById("submit_button").click()'>Fizetés</a>
             <a class="delete" href="./cart.php">Utazás törlése</a>
           </div>
         </div>

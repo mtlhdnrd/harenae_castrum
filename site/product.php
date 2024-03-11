@@ -55,14 +55,14 @@
                     echo "    <img src='./img/planets/".$planet->infopanel."'>";
                     echo "</div>";
                     echo "<div class='product_item'>";
-                    echo "    <img src='./img/planets/".$planet->image."' onclick='openOverlay(".$planet->ID.")'>";
+                    echo "    <img class='planetimg'src='./img/planets/".$planet->image."' onclick='openOverlay(".$planet->ID.")'>";
                     echo "    <div class='product_desc details'>";
                     echo "        <h2>".$planet->name."</h2>";
                     echo "        <p>".$planet->description."</p>";
                     echo "    </div>";
                     echo "    <form action='./cart.php' method='post' class='product_desc add' id='form".$planet->ID."'>";
                     echo "        <input type='hidden' name='planetID' value='".$planet->ID."'>";
-                    echo "        <a class='termek_button' href='#' onclick='document.getElementById(\"form".$planet->ID."\").submit()'>Foglalás</a>";
+                    echo "        <a class='termek_button btn' href='#' onclick='document.getElementById(\"form".$planet->ID."\").submit()'>Foglalás</a>";
                     echo "    </form>";
                     echo "</div>";
                 }

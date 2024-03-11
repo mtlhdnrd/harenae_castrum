@@ -1,16 +1,13 @@
 /* root */
 :root {
-    --blue: #1B1A55;
-    --font1: #dbdcde;
-    --font2: #070F2B;
+    --font1: #eeeeee;
+    --font2: #000000;
     --headfoot: #dbdcde;
     --button: #dbdcde;
-    --button-bg: #070F2B;
+    --button-bg: #232323db;
     --product-bg: #dbdcde;
-    --dropdown-highlight: #c1c2c4; /*csak üssön a headfoot-tól*/
+    --dropdown-highlight: #000000; /*csak üssön a headfoot-tól*/
     --hamburger-bg: #ebeced;
-    --hamburger-line: #070F2B;
-
 }
 /*importált betűtípusok*/
 @font-face {
@@ -101,13 +98,14 @@ h1 {
 h2 {
     margin: 0;
     font-size: 3em;
-    font-family: ImBatman;
+    font-family: Ailerons;
+    letter-spacing: -10px;
 }
 
 p {
     font-family: Poppins;
     margin: 0;
-    font-size: 16px;
+    font-size: clamp (16px, 0.7rem);
 }
 
 /*egyéb jelölők*/
@@ -131,9 +129,10 @@ input {
 .termek_button {
     background-color: rgba(0, 0, 0, 0.6);
     font-family: Ailerons;
-    font-size: 2em;
+    font-size: clamp(2em, 2em, 3em);
     color: var(--button);
     padding: 5% 9%;
+    min-width: 150px;
     border-color: var(--button);
     text-shadow: 0px 0px 10px var(--button);
     box-shadow:  0px 0px 10px var(--button);
@@ -310,6 +309,7 @@ input {
 #devs h2 {
     font-family: Poppins;
     font-size: 2em;
+    letter-spacing: +3px;
 }
 
 /* ------------------------------PRODUCTS.HTML------------------------------ */
@@ -319,8 +319,10 @@ input {
 }
 
 .product_item {
-    height: 225px;
-    width: 800px;
+    height: 30vh;
+    min-height: 225px;
+    width: 70%;
+    min-width: 800px;
     margin: 20px;
     background-color: var(--product-bg);
     display: flex;
@@ -355,7 +357,7 @@ input {
 }
 
 .details {
-    width: 45%;
+    width: 60%;
     padding: 20px;
     font-size:1em;
     word-break: break-word;
@@ -363,6 +365,7 @@ input {
 
 .details h2 {
     font-size: 2em;
+    letter-spacing: -7px;
 }
 
 .add {
@@ -374,11 +377,19 @@ input {
 }
 
 .add .termek_button {
-    padding: 20px 30px;
-    font-size: 25px
+    padding: 5% 7%;
+    font-size: clamp(1em, 2em, 3em);
+}
+
+.planetimg{
+    cursor: pointer;
 }
 
 /* ------------------------------CART.HTML------------------------------ */
+
+.cartp{
+    font-size: 150%;
+}
 
 .pay_column {
     height:100%
@@ -413,10 +424,19 @@ input {
     padding: 10px 20px;
     font-family: Poppins;
     font-size: 80%;
-    text-decoration:underline;
+    color: var(--font1);
     margin: auto;
     margin-top: 0;
     margin-bottom: 5%;
+}
+
+#price{
+    font-size: 150%;
+}
+
+.delete:hover, .delete:focus{
+    color: var(--font1);
+    text-decoration:underline;
 }
 
 #column1 {
@@ -595,6 +615,7 @@ input {
         display: flex;
         flex-direction: column;
         row-gap: 6px;
+        margin-left: 30px;
     }
 
     #hamburger_div {
@@ -608,7 +629,7 @@ input {
 
     .icon {
         width: 28px;
-        border: 3px var(--hamburger-line) solid;
+        border: 3px var(--font2) solid;
         border-radius: 2px;
     }
 
@@ -657,6 +678,7 @@ input {
         text-indent: 0;
         position:relative;
         margin: 20px 0px;
+        font-size: larger;
     }
 
 /* ------------------------------PRODUCTS.HTML------------------------------ */
@@ -668,6 +690,8 @@ input {
         margin: 15%;
         padding: 15px;
         justify-content: center;
+        min-width: 0;
+        min-height: 0;
     }
 
     .product_desc {
