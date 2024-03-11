@@ -4,7 +4,7 @@
 - ~~cart.php base functionality~~
 - ~~cart.php show planet description~~
 - ~~cart.php required inputs~~
-- receipt
+- ~~receipt~~
 - ~~datalist for cart "from" field~~
 - ~~finalize.php summary~~
 
