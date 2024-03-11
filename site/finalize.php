@@ -106,7 +106,7 @@
         </div>
         <?php
             if(!isset($_GET["success"])) {
-                echo "<a class='termek_button finalize_btn' onclick=\"document.getElementById('bootleg_post_request').click()\">Fizetés</a>";
+                echo "<a class='termek_button finalize_btn btn' onclick=\"document.getElementById('bootleg_post_request').click()\">Fizetés</a>";
             }
         ?>
     </main>
