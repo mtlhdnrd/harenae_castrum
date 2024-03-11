@@ -47,6 +47,7 @@
     <main>
         <div class="finalize_details">
             <?php
+                session_start();
                 if(isset($_GET["success"])) {
                     $success = $_GET["success"];
                     if($success) {
@@ -106,6 +107,18 @@
                     echo "<input name='price' value='".$price."'>";
                     echo "<input type='submit' id='bootleg_post_request'>";
                     echo "</form>";
+
+
+                    $receipt_text = "Megrendelő neve: ".$customerName."\n"
+                        ."Hova: ".$planet->name."\n"
+                        ."Honnan: ".$from."\n"
+                        ."Utazás napja: ".$dateOfJourney."\n";
+                    if($dateOfReturn != "") {
+                        $receipt_text = $receipt_text."Visszaút napja: ".$dateOfReturn."\n";
+                    }
+                    $receipt_text = $receipt_text."Utasok száma: ".$people."\n"
+                        ."Végösszeg: $".$price;
+                    $_SESSION["receipt_text"] = $receipt_text;
                 }
             ?>
         </div>
@@ -113,21 +126,7 @@
             if(!isset($_GET["success"])) {
                 echo "<a class='termek_button finalize_btn' onclick=\"document.getElementById('bootleg_post_request').click()\">Fizetés</a>";
             } else {
-                /*$receipt_file = tmpfile();
-                $meta_data = stream_get_meta_data($receipt_file);
-                $filename = $meta_data["uri"];
-                echo "<script>console.log(".$filename.");></script>";
-                fwrite($receipt_file, "lorem ipsum");
-                fclose($receipt_file);
-
-                header('Content-Description: File Transfer');
-                header('Content-Disposition: attachment; filename='.basename($filename));
-                header('Expires: 0');
-                header('Cache-Control: must-revalidate');
-                header('Pragma: public');
-                header('Content-Length: '.filesize($filename));
-                header("Content-Type: text/plain");
-                readfile($filename);*/
+                echo "<a class='termek_button finalize_btn' href='./receipt.php'>Számla</a>";
             }
         ?>
     </main>
