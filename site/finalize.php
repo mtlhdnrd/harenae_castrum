@@ -53,6 +53,11 @@
                         echo "<p class='feedback'>Sikeres rendelés</p>";
                     } else {
                         echo "<p class='feedback'>Sikertelen rendelés</p>";
+                        if(isset($_GET["reason"])) {
+                            if($_GET["reason"] == "unknown_customer") {
+                                echo "<p class='feedback'>Ismeretlen ügyfél</p>";
+                            }
+                        }
                     }
                 } else if(!isset($_POST["planetID"])
                     || !isset($_POST["name"])
@@ -107,6 +112,22 @@
         <?php
             if(!isset($_GET["success"])) {
                 echo "<a class='termek_button finalize_btn' onclick=\"document.getElementById('bootleg_post_request').click()\">Fizetés</a>";
+            } else {
+                /*$receipt_file = tmpfile();
+                $meta_data = stream_get_meta_data($receipt_file);
+                $filename = $meta_data["uri"];
+                echo "<script>console.log(".$filename.");></script>";
+                fwrite($receipt_file, "lorem ipsum");
+                fclose($receipt_file);
+
+                header('Content-Description: File Transfer');
+                header('Content-Disposition: attachment; filename='.basename($filename));
+                header('Expires: 0');
+                header('Cache-Control: must-revalidate');
+                header('Pragma: public');
+                header('Content-Length: '.filesize($filename));
+                header("Content-Type: text/plain");
+                readfile($filename);*/
             }
         ?>
     </main>

@@ -23,6 +23,9 @@
         $price = $_POST["price"];
 
         $customerID = get_customer_id_by_name($customerName);
+        if(http_response_code() == 400) {
+            header("Location: ".$_SERVER["HTTP_REFERER"]."?success=0&reason=unknown_customer");
+        }
         $fromID = get_planet_id_by_name($from);
 
         if($dateOfReturn == "") {
@@ -31,6 +34,5 @@
             record_return_journey($customerID, $dateOfJourney, $fromID, $planetID, $participants, $price, $dateOfReturn);
         }
 
-        // commented to debug the query generation
         header("Location: ".$_SERVER["HTTP_REFERER"]."?success=1");
     }
