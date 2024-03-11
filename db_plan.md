@@ -4,7 +4,7 @@
 - name (string)
 - image (filepath)
 - description (string)
-- hostility (1-5 int) (default 1)
+- hostility (0-5 int) (default 1)
 - landable (bool) (default false)
 - price (int)
 - infopanel (filepath)
